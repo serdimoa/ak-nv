@@ -1,0 +1,28 @@
+@import "../bower_components/gridle/sass/gridle/gridle";
+
+@include gridle_setup((
+        context:12,
+        gutter-width:10px
+));
+
+@include gridle_register_state( mobile, (
+        max-width : 33.9em
+) );
+@include gridle_register_state( mabileland , (
+        max-width : 47.9em
+) );
+@include gridle_register_state( tablet, (
+        max-width : 61.9em
+) );
+@include gridle_register_state( desktop, (
+        min-width : 74.9em
+) );
+
+@include gridle_register_state(desktoplarge,(
+        max-width:1824px
+));
+
+
+@include gridle_register_state ( landscape, (
+        query : "(orientation : landscape)"
+) );
