@@ -17,5 +17,8 @@
   ],
   "dependencies": {
     "react": "^0.14.7"
+  },
+  "devDependencies": {
+    "gridle": "^2.0.44"
   }
 }

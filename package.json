@@ -21,6 +21,7 @@
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-react": "^4.1.0",
+    "gridle": "^2.0.44",
     "gulp": "latest",
     "gulp-cli": "^1.2.1",
     "gulp-livereload": "^3.8.1",
@@ -33,6 +34,7 @@
     "gulp-watch": "^4.3.5",
     "jscs": "^2.10.1",
     "tiny-lr": "^0.2.1",
+    "tslint": "^3.5.0",
     "typescript": "^1.8.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
