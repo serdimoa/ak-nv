@@ -21,6 +21,7 @@
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-react": "^4.1.0",
+    "foundation-sites": "^6.2.0",
     "gridle": "^2.0.44",
     "gulp": "latest",
     "gulp-cli": "^1.2.1",
