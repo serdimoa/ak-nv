@@ -1,78 +1,134 @@
 /// <reference path="../../typings/browser/ambient/react/react.d.ts" />
 /// <reference path="../../typings/browser/ambient/react-dom/react-dom.d.ts" />
+/// <reference path="../../typings/browser/ambient/webfontloader/webfontloader.d.ts"/>
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import * as WebFont from "webfontloader";
 
-var logo: string = "image/logomenu.svg";
+WebFont.load({
+    google: {
+        families: ["Roboto Condensed"]
+    }
+});
+namespace constants {
+    export var LOGO: string = "image/logomenu.svg";
+}
 
-var NavigationOpen = React.createClass({
-    displayName: "NavigationOpen",
-    getInitialState: function () {
-        return {
-            show: false
-        };
-    },
-    render: function () {
+export interface NavigationOpenProps {
+    active?: boolean;
+}
+
+export interface NavigationOpenState {
+}
+
+export interface NavigationProps {
+}
+
+export interface NavigationState {
+    condition?: boolean;
+    showMenu?: boolean;
+}
+
+export interface HeaderProps {
+}
+
+export interface HeaderState {
+}
+
+export interface ContentProps {
+}
+
+export interface ContentState {
+}
+
+var stateOverflow = function (): void {
+    var overflowBody: string = document.getElementById("body").style.overflow;
+    if (overflowBody === "auto" || overflowBody === "") {
+        document.getElementById("body").style.overflow = "hidden";
+    } else {
+        document.getElementById("body").style.overflow = "auto";
+    }
+};
+
+export class NavigationOpen extends React.Component<NavigationOpenProps, NavigationOpenState> {
+    constructor(props: NavigationOpenProps) {
+        super(props);
+    }
+
+    render() {
         return (
-            <div id="navigation-open">
+            <div id="navigation-open" className={this.props.active ? "is-active" : "is-inactive" }>
                 <div className="row">
                     <div className="small-4  medium-4 large-4 float-center">
-                        <img src={logo} className="" alt="logo image"/>
+                        <img src={ constants.LOGO } className="" alt="logo image"/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="menu-centered">
                         <ul className="menu vertical">
-                            <li><a href="#">One</a></li>
-                            <li><a href="#">Two</a></li>
-                            <li><a href="#">Three</a></li>
-                            <li><a href="#">Four</a></li>
+                            <li>
+                                <a href="#">One</a>
+                            </li>
+                            <li>
+                                <a href="#">Two</a>
+                            </li>
+                            <li>
+                                <a href="#">Three</a>
+                            </li>
+                            <li>
+                                <a href="#">Four</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         );
     }
-});
+}
 
-var Navigation = React.createClass({
-    displayName: "Navigation",
-    getInitialState: function () {
-        return {
-            condition: false
-        };
-    },
-    handleClick: function () {
-        this.setState({condition: !this.state.condition});
-    },
-    render: function () {
+export class Navigation extends React.Component<NavigationProps, NavigationState> {
+    state: NavigationState = {condition: false, showMenu: false };
+    constructor() {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick () {
+        this.setState({
+            condition: !this.state.condition,
+            showMenu: !this.state.showMenu
+        });
+        stateOverflow();
+    }
+    render() {
         return (
             <div>
-                <NavigationOpen />
+                <NavigationOpen active={this.state.showMenu}/>
                 <div className="row ">
                     <div className="small-8 medium-4 large-3  columns ">
-                        <img src={logo} className="img-responsive" alt="logo image"/>
+                        <img src={constants.LOGO} className="img-responsive" alt="logo image"/>
                     </div>
                     <div className="small-2 medium-offset-6 medium-2 large-offset-6 large-2 float-right">
-                        <a href="#" className={this.state.condition ? "menu-button is-active" : "menu-button" }
-                           onClick={ this.handleClick } id="menuButton">
-                            <span className="burger-icon">
+                        <div className="Circle" onClick={ this.handleClick }>
+                            <span className={this.state.condition ? "menu-button is-active" : "menu-button" }
+                                  id="menuButton">
+                                <span className="burger-icon">
+                                </span>
                             </span>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
-});
+}
 
 var Content = React.createClass({
     displayName: "Content",
     render: function () {
         return (
             <div className="row">
-                <div className="gr-4">ghbasdddddddddddddklaskdaskdsajdahsdasdjasdjasdjaskdjadkasdkasdjasdhashdashd</div>
+                <div className="gr-4">ывфывфы</div>
                 <div className="gr-4">dasddasdwqeqweqweweqweqweqwefdsfdf</div>
                 <div className="gr-4"></div>
             </div>
@@ -80,17 +136,8 @@ var Content = React.createClass({
     }
 });
 
-var Aside = React.createClass({
-    displayName: "Aside",
-    render: function () {
-        return (
-            <div className="aside">aside</div>
-        );
-    }
-});
-
 ReactDOM.render(
-    <Navigation />,
+    React.createElement(Navigation),
     document.getElementById("navigation")
 );
 
@@ -99,7 +146,3 @@ ReactDOM.render(
     document.getElementById("content")
 );
 
-ReactDOM.render(
-    <Aside />,
-    document.getElementById("sidebar")
-);
