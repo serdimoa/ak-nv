@@ -1,0 +1,238 @@
+@import "settings";
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+body {
+  @extend %antialias;
+  font-weight: $n-regular;
+  color: $c-body-text;
+  text-align: center;
+  font-size: $s-p-normal / 1.1;
+
+  @media screen and (min-width: $mq-small) {
+    font-size: $s-p-normal;
+  }
+}
+
+a {
+  color: $c-links;
+  text-decoration: none;
+}
+
+.link { // Simply here to be used as an extender
+  &:hover {
+    border-bottom: solid 1px $c-links;
+    text-decoration: none;
+  }
+}
+
+/*--------------------------------
+
+	Headings
+
+*/
+
+h1, h2, h3, h4, h5 {
+  color: $c-black;
+  font-weight: $n-bold;
+  margin: .4em 0;
+  line-height: 1.1em;
+}
+
+.h1 {
+  font-size: $s-h1 / 1.5; // This is for mobile, hence the /1.5
+
+  @media screen and (min-width: $mq-small) {
+    font-size: $s-h1;
+  }
+}
+
+.h2 {
+  font-size: $s-h2 / 1.5;
+
+  a {
+    @extend .link;
+  }
+
+  @media screen and (min-width: $mq-small) {
+    font-size: $s-h2;
+  }
+}
+
+.h3 {
+  font-size: $s-h3 / 1.2;
+
+  @media screen and (min-width: $mq-small) {
+    font-size: $s-h3;
+  }
+}
+
+.h4 {
+  font-size: $s-h4;
+}
+
+.h5 {
+  font-size: $s-h5;
+}
+
+h1 { @extend .h1; }
+h2 { @extend .h2; }
+h3 { @extend .h3; }
+h4 { @extend .h4; }
+h5 { @extend .h5; }
+
+
+/*--------------------------------
+
+	Special headings
+
+*/
+
+.section-title,
+section > h1:first-child { // Main page heading with yellow underline
+  display: block;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1em;
+  text-align: center;
+
+  @media screen and (min-width: $mq-small) and (min-height: $mq-small){
+    padding-top: 14rem;
+    padding-bottom: 18rem;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      @include pseudo;
+      top: 100%; left: 50%;
+      width: 24rem;
+      height: .9rem;
+      margin: 5rem 0 0 -12rem;
+      background: $c-yellow;
+    }
+  }
+
+  small { // Not sure what this does, or if it's used?
+    display: block;
+    font-size: $s-p-large;
+    color: mix($c-black, $c-grey);
+  }
+}
+
+.secondary-title {
+  position: relative;
+  padding-bottom: 0.4em;
+  margin: 1rem 0 10rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  @media screen and (min-width: $mq-medium) {
+    font-size: 3rem;
+  }
+
+  &:after {
+    @include pseudo;
+    bottom: 0;
+    left: 50%;
+    width: 25%;
+    height: 8px;
+    margin-left: -12.5%;
+    margin-bottom: -5rem;
+    background: $c-yellow;
+  }
+}
+
+.underline {
+
+  position: relative;
+  padding-bottom: 0.4em;
+  margin-bottom: 2em;
+
+  &:after {
+    @include pseudo;
+    bottom: 0;
+    display: block;
+    width: 100px;
+    height: 8px;
+    margin-bottom: -3rem;
+    background: $c-yellow;
+  }
+}
+
+.statement {
+  @extend .h3;
+  padding: 4rem 0;
+  color: $c-grey;
+  font-weight: $n-light;
+}
+
+/*--------------------------------
+
+	Paragraphs
+
+*/
+
+p,
+ul,
+blockquote,
+figure {
+  margin: 1.7em 0;
+  line-height: 1.6em;
+}
+
+li {
+  line-height: 1.54em;
+}
+
+.intro {
+  margin: 4rem 0;
+  font-size: $s-h3;
+  font-weight: $n-light;
+  color: $c-grey;
+}
+
+
+/*--------------------------------
+
+	Articles
+	+ Wrapped round all blog posts
+	+ Wrapped round all case studies
+	+ Wrapped round all service and sector pages
+
+*/
+
+article.page-wrapper, .copy {
+  text-align: left;
+
+  a:not([class*="button"]) {
+    @extend .link;
+  }
+
+  p,
+  li {
+    font-size: 2.1rem;
+    line-height: 1.8em;
+  }
+
+  li {
+    margin: .7em 0;
+  }
+}
+
+.full-width {
+  padding: 0 1px;
+
+  img {
+    width: 100%;
+  }
+}

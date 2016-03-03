@@ -1,14 +1,24 @@
 @import "grid";
+@import "typography";
 
 body {
   overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.center-vertical{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .menu-button {
   display: inline-block;
   background-color: #e6e6e6;
   padding: 25px;
+  position: fixed;
   border-radius: 50%;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.56);
 }
@@ -82,20 +92,43 @@ body {
     }
   }
 }
+#header{
+  min-height:60rem;
+  height: 95vh;
+
+  h1{
+    font-family: 'Arimo', sans-serif;
+    text-align: left;
+    font-size: 4rem;
+    line-height: 1.2em;
+    margin: .22em 0 .6em;
+  }
+  @media screen and (min-width: $mq-mobile){
+    height: 60vh;
+    min-height: 40rem;
+    max-height: 89rem;
+  }
+  @media screen and (min-width: $mq-small) {
+    min-height: 60rem;
+    height: 95vh;
+  }
+}
 
 #navigation {
-  position: fixed;
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
   top:0;
+  position: absolute;
   z-index:99999;
   background: #ffffff;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.56);
+  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.56);
+  img{
+    margin-top: 25px;
+  }
 }
 
 #content {
   height: 5000px;
-  padding-top:150px;
 }
 
 @-webkit-keyframes underline {

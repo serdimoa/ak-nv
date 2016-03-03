@@ -48,7 +48,7 @@
     "triple-equals": [true,
       "allow-null-check"
     ],
-    "typedef-whitespace": [true, {
+    "typedef-whitespace": [false, {
       "call-signature": "nospace",
       "index-signature": "nospace",
       "parameter": "nospace",
