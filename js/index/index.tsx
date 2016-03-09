@@ -1,52 +1,31 @@
 /// <reference path="../../typings/browser/ambient/react/react.d.ts" />
 /// <reference path="../../typings/browser/ambient/react-dom/react-dom.d.ts" />
 /// <reference path="../../typings/browser/ambient/webfontloader/webfontloader.d.ts"/>
+///<reference path="data.d.ts"/>
 ///<reference path="datatopage.ts"/>
+///<reference path="datatocontent.ts"/>
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as WebFont from "webfontloader";
 import {index_data} from "./datatopage";
+import * as DataToContent from "./datatocontent";
+import * as Data from "data";
+import {contenttopage} from "./datatocontent";
+import Element = JSX.Element;
 
 WebFont.load({
     google: {
-        families: ["Roboto Condensed", "Arimo"]
+        families: ["Roboto Condensed", "PT Sans Narrow"]
     }
 });
 namespace constants {
-    export var LOGO: string = "image/logomenu.svg";
+    export var LOGO:string = "image/logomenu.svg";
 }
 
-export interface NavigationOpenProps {
-    active?: boolean;
-}
 
-export interface NavigationOpenState {
-}
-
-export interface NavigationProps {
-}
-
-export interface NavigationState {
-    condition?: boolean;
-    showMenu?: boolean;
-}
-
-export interface HeaderProps {
-}
-
-export interface HeaderState {
-}
-
-export interface ContentProps {
-    cardClass?: string;
-}
-
-export interface ContentState {
-}
-
-var stateOverflow = function (): void {
-    var overflowBody: string = document.getElementById("body").style.overflow;
+var stateOverflow = function ():void {
+    var overflowBody:string = document.getElementById("body").style.overflow;
     if (overflowBody === "auto" || overflowBody === "") {
         document.getElementById("body").style.overflow = "hidden";
     } else {
@@ -54,8 +33,8 @@ var stateOverflow = function (): void {
     }
 };
 
-export class NavigationOpen extends React.Component<NavigationOpenProps, NavigationOpenState> {
-    constructor(props: NavigationOpenProps) {
+export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Data.NavigationOpenState> {
+    constructor(props:Data.NavigationOpenProps) {
         super(props);
     }
 
@@ -90,8 +69,8 @@ export class NavigationOpen extends React.Component<NavigationOpenProps, Navigat
     }
 }
 
-export class Navigation extends React.Component<NavigationProps, NavigationState> {
-    state: NavigationState = {condition: false, showMenu: false};
+export class Navigation extends React.Component<Data.NavigationProps,Data.NavigationState> {
+    state:Data.NavigationState = {condition: false, showMenu: false};
 
     constructor() {
         super();
@@ -129,7 +108,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     }
 }
 
-export class Header extends React.Component<HeaderProps, HeaderState> {
+export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> {
     constructor() {
         super();
     }
@@ -147,16 +126,22 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
     }
 }
 
-export class Content extends React.Component<ContentProps, ContentState> {
+export class Content extends React.Component<Data.ContentProps, Data.ContentState> {
     constructor() {
         super();
     }
+
     render() {
+        var str = "<div class='row'>";
+        contenttopage.forEach(function (element) {
+
+            str += element.Title;
+        });
+        str+="</div>";
         return (
-            <div className="card">
-                <div className="card-content"></div>
-            </div>
-        );
+            <div>{str}</div>
+        )
+
     }
 }
 var Conten1t = React.createClass({
@@ -172,17 +157,38 @@ var Conten1t = React.createClass({
     }
 });
 
-ReactDOM.render(
-    React.createElement(Header),
-    document.getElementById("header")
-);
-ReactDOM.render(
-    React.createElement(Navigation),
-    document.getElementById("navigation")
-);
+ReactDOM
+    .render(React
 
-ReactDOM.render(
-    <Content/>,
-    document.getElementById("content")
-);
+        .createElement(Header)
+
+        ,
+        document
+            .getElementById(
+                "header"
+            )
+    );
+ReactDOM
+    .render(React
+
+        .createElement(Navigation)
+
+        ,
+        document
+            .getElementById(
+                "navigation"
+            )
+    );
+
+ReactDOM
+    .render(React
+
+        .createElement(Content)
+
+        ,
+        document
+            .getElementById(
+                "content"
+            )
+    );
 

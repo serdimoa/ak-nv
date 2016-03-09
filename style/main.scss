@@ -97,7 +97,7 @@ body {
   height: 95vh;
 
   h1{
-    font-family: 'Arimo', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     text-align: left;
     font-size: 4rem;
     line-height: 1.2em;
@@ -109,7 +109,7 @@ body {
     max-height: 89rem;
   }
   @media screen and (min-width: $mq-small) {
-    min-height: 60rem;
+    min-height: 40rem;
     height: 95vh;
   }
 }

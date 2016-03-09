@@ -1,18 +1,19 @@
-///<reference path="data.ts"/>
-import {HeaderClass} from "./data";
+///<reference path="data.d.ts"/>
+import {HeaderInterface} from "./data.d";
 /**
  * Created by serdimoa on 03.03.16.
  */
 
 export module DataToPage {
-    export class HeaderData extends HeaderClass {
-        constructor(message: string) {
-            super(message);
+    export class HeaderData implements HeaderInterface {
+        HeaderText:string;
+        constructor(header:string) {
+            this.HeaderText = header;
         }
-        showText() {
-            return this.h1;
+        showText():string {
+            return this.HeaderText;
         }
     }
 }
 
-export var index_data = new DataToPage.HeaderData("Самый крупный торговый центр автозапчастей в нижневартовске");
+export var index_data = new DataToPage.HeaderData("Самый крупный торговый центр автозапчастей в Нижневартовске");
