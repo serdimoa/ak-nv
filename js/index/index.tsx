@@ -19,13 +19,13 @@ WebFont.load({
         families: ["Roboto Condensed", "PT Sans Narrow"]
     }
 });
+
 namespace constants {
-    export var LOGO:string = "image/logomenu.svg";
+    export var LOGO: string = "image/logomenu.svg";
 }
 
-
-var stateOverflow = function ():void {
-    var overflowBody:string = document.getElementById("body").style.overflow;
+var stateOverflow = function (): void {
+    var overflowBody: string = document.getElementById("body").style.overflow;
     if (overflowBody === "auto" || overflowBody === "") {
         document.getElementById("body").style.overflow = "hidden";
     } else {
@@ -34,7 +34,7 @@ var stateOverflow = function ():void {
 };
 
 export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Data.NavigationOpenState> {
-    constructor(props:Data.NavigationOpenProps) {
+    constructor(props: Data.NavigationOpenProps) {
         super(props);
     }
 
@@ -69,8 +69,8 @@ export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Da
     }
 }
 
-export class Navigation extends React.Component<Data.NavigationProps,Data.NavigationState> {
-    state:Data.NavigationState = {condition: false, showMenu: false};
+export class Navigation extends React.Component<Data.NavigationProps, Data.NavigationState> {
+    state: Data.NavigationState = {condition: false, showMenu: false};
 
     constructor() {
         super();
@@ -137,10 +137,10 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 
             str += element.Title;
         });
-        str+="</div>";
+        str += "</div>";
         return (
             <div>{str}</div>
-        )
+        );
 
     }
 }

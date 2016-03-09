@@ -6,11 +6,11 @@ import {HeaderInterface} from "./data.d";
 
 export module DataToPage {
     export class HeaderData implements HeaderInterface {
-        HeaderText:string;
-        constructor(header:string) {
+        HeaderText: string;
+        constructor(header: string) {
             this.HeaderText = header;
         }
-        showText():string {
+        showText(): string {
             return this.HeaderText;
         }
     }
