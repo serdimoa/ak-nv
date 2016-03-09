@@ -10198,7 +10198,7 @@ select {
     top: 50%;
     margin-top: -0.5rem; }
   .is-active > .accordion-title::before {
-    content: 'тАУ'; }
+    content: '–'; }
 
 .accordion-content {
   padding: 1rem;
@@ -11846,6 +11846,57 @@ table.hover tr:nth-of-type(even):hover {
 	Column grid
 
 */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  background: #FFF; }
+  .page-wrapper section:last-child {
+    padding-bottom: 8rem; }
+
+.page-wrapper {
+  box-shadow: 1px 0 #efefef, -1px 0 #efefef; }
+
+.page-wrapper {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media screen and (min-width: 710px) {
+    .page-wrapper {
+      max-width: 768px;
+      margin-right: 15px;
+      margin-left: 15px; } }
+  @media screen and (min-width: 798px) {
+    .page-wrapper {
+      margin-right: auto;
+      margin-left: auto; } }
+  @media screen and (min-width: 808px) {
+    .page-wrapper {
+      max-width: 1024px;
+      margin-right: 20px;
+      margin-left: 20px; } }
+  @media screen and (min-width: 1064px) {
+    .page-wrapper {
+      margin-right: auto;
+      margin-left: auto; } }
+  @media screen and (min-width: 1104px) {
+    .page-wrapper {
+      max-width: 1480px;
+      margin-right: 40px;
+      margin-left: 40px; } }
+  @media screen and (min-width: 1560px) {
+    .page-wrapper {
+      margin-right: auto;
+      margin-left: auto; } }
+  @media screen and (min-width: 1600px) {
+    .page-wrapper {
+      max-width: 1500px;
+      margin-right: 60px;
+      margin-left: 60px; } }
+  @media screen and (min-width: 1620px) {
+    .page-wrapper {
+      margin-right: auto;
+      margin-left: auto; } }
+
 .row .row, .full-width .row, .row .full-width, .full-width .full-width {
   margin-left: -2rem;
   margin-right: -2rem; }
@@ -21546,7 +21597,8 @@ article.page-wrapper, .copy {
     margin: .7em 0; }
 
 .full-width {
-  padding: 0 1px; }
+  padding: 0 1px;
+  max-width: 100%; }
   .full-width img {
     width: 100%; }
 
@@ -21748,7 +21800,7 @@ body {
       max-height: 89rem; } }
   @media screen and (min-width: 680px) {
     #header {
-      min-height: 4rem;
+      min-height: 40rem;
       height: 95vh; } }
 
 #navigation {
@@ -21763,6 +21815,55 @@ body {
 
 #content {
   height: 5000px; }
+  #content .column, #content .columns {
+    padding: 1rem 1rem 1rem; }
+  #content .card {
+    height: 240px;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
+    #content .card h3 {
+      position: absolute;
+      bottom: 0;
+      font-family: 'PT Sans Narrow', sans-serif;
+      padding: 0 2rem 0;
+      z-index: 2;
+      color: #333;
+      text-align: left;
+      transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
+      #content .card h3 p {
+        font-size: 0.8rem;
+        text-align: left;
+        color: #fff;
+        margin: 0;
+        opacity: 0;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif; }
+    #content .card:hover {
+      cursor: pointer;
+      box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.56); }
+      #content .card:hover .cover {
+        top: 0; }
+      #content .card:hover h3 {
+        color: #fff;
+        transform: translateY(-15px); }
+        #content .card:hover h3 p {
+          opacity: 1; }
+    #content .card .cover {
+      content: "";
+      display: block;
+      background-color: #E10D0D;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      -webkit-transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
 
 @-webkit-keyframes underline {
   0% {

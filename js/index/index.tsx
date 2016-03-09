@@ -132,30 +132,46 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
     }
 
     render() {
-        var str = "<div class='row'>";
-        contenttopage.forEach(function (element) {
-
-            str += element.Title;
+        var card_generator = contenttopage.map(function(data, i) {
+            var size: string = "";
+            var img: string = "url(" + data.Img + ")";
+            switch (data.Size) {
+                case 1:
+                    size = "column small-12 medium-4 large-4 ";
+                    break;
+                case 2:
+                    size = "column small-12 medium-8 large-8 ";
+                    break;
+            }
+            return <Card Size={size} key={i} Title={data.Title} Img={img} />;
         });
-        str += "</div>";
         return (
-            <div>{str}</div>
+            <div className="full-width">
+                    {card_generator}
+            </div>
         );
 
     }
 }
-var Conten1t = React.createClass({
-    displayName: "Content1",
-    render: function () {
-        return (
-            <div className="row">
-                <div className="gr-4">ывфывфы</div>
-                <div className="gr-4">dasddasdwqeqweqweweqweqweqwefdsfdf</div>
-                <div className="gr-4"></div>
+
+export class Card extends React.Component<Data.CardProps, Data.CardState> {
+    constructor(props: Data.CardProps) {
+        super(props);
+    }
+    render() {
+        return(
+            <div className={ this.props.Size }>
+                <article className="card" style={{backgroundImage:this.props.Img}}>
+                    <h3>
+                        <span>{this.props.Title}</span>
+                        <p>Читать подробнее</p>
+                    </h3>
+                    <div className="cover"></div>
+                </article>
             </div>
         );
     }
-});
+}
 
 ReactDOM
     .render(React

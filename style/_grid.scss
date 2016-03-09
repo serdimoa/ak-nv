@@ -10,6 +10,74 @@
 
 */
 
+.page-wrapper {
+  @extend %page-width;
+  @extend %page-borders;
+  position: relative;
+  z-index: $z-page;
+  background: $c-white;
+
+  section:last-child {
+    padding-bottom: 8rem;
+  }
+}
+
+%page-borders {
+  box-shadow:
+          1px 0 $c-medium-grey,
+          -1px 0 $c-medium-grey;
+}
+
+%page-width {
+  max-width: $mq-small;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: $mq-small + ( $s-small-gutters * 2 ) ) {
+    max-width: $mq-medium;
+    margin-right: $s-small-gutters;
+    margin-left: $s-small-gutters;
+  }
+
+  @media screen and (min-width: $mq-medium + ( $s-small-gutters * 2 ) ) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $mq-medium + ( $s-medium-gutters * 2 ) ) {
+    max-width: $mq-large;
+    margin-right: $s-medium-gutters;
+    margin-left: $s-medium-gutters;
+  }
+
+  @media screen and (min-width: $mq-large + ( $s-medium-gutters * 2 ) ) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $mq-large + ( $s-large-gutters * 2 ) ) {
+    max-width: $mq-huge;
+    margin-right: $s-large-gutters;
+    margin-left: $s-large-gutters;
+  }
+
+  @media screen and (min-width: $mq-huge + ( $s-large-gutters * 2 ) ) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $mq-huge + ( $s-huge-gutters * 2 ) ) {
+    max-width: $s-max-site-width;
+    margin-right: $s-huge-gutters;
+    margin-left: $s-huge-gutters;
+  }
+
+  @media screen and (min-width: $s-max-site-width + ( $s-huge-gutters * 2 ) ) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .row {
   @extend .cf;
 
@@ -21,6 +89,7 @@
 
 .full-width {
   @extend .row;
+
   padding-right: $s-column-gutter / 2;
   padding-left: $s-column-gutter / 2;
 }

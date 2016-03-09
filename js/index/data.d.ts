@@ -12,6 +12,7 @@ export interface ContentInterface {
     Title?: string;
     Img?: string;
     forEach(f: Function): void;
+    map(f: Function): void;
 }
 
 export interface NavigationOpenProps {
@@ -40,4 +41,14 @@ export interface ContentProps {
 }
 
 export interface ContentState {
+}
+
+export interface CardProps {
+    Size?: string;
+    Title?: string;
+    Img?: string;
+    key?: number;
+}
+
+export interface CardState {
 }

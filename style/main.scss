@@ -6,7 +6,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.center-vertical{
+.center-vertical {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -92,18 +92,19 @@ body {
     }
   }
 }
-#header{
-  min-height:60rem;
+
+#header {
+  min-height: 60rem;
   height: 95vh;
 
-  h1{
+  h1 {
     font-family: 'PT Sans Narrow', sans-serif;
     text-align: left;
     font-size: 4rem;
     line-height: 1.2em;
     margin: .22em 0 .6em;
   }
-  @media screen and (min-width: $mq-mobile){
+  @media screen and (min-width: $mq-mobile) {
     height: 60vh;
     min-height: 40rem;
     max-height: 89rem;
@@ -117,18 +118,78 @@ body {
 #navigation {
   width: 100%;
   padding: 15px 0;
-  top:0;
+  top: 0;
   position: absolute;
-  z-index:99999;
+  z-index: 99999;
   background: #ffffff;
   //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.56);
-  img{
+  img {
     margin-top: 25px;
   }
 }
 
 #content {
   height: 5000px;
+  .column {
+    padding: 1rem 1rem 1rem;
+  }
+  .card {
+    height: 240px;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transition: all .2s $ease-in-out-cubic;
+    h3 {
+      position: absolute;
+      bottom: 0;
+      font-family: 'PT Sans Narrow', sans-serif;
+      padding: 0 2rem 0 ;
+      z-index: 2;
+      color: #333;
+      text-align: left;
+      transition: transform .2s $ease-in-out-cubic, color .2s $ease-in-out-cubic;
+
+      p{
+        font-size: 0.8rem;
+        text-align: left;
+        color: #fff;
+        margin:0;
+        opacity: 0;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.56);
+      .cover {
+        top: 0;
+      }
+
+      h3{
+        color: #fff;
+        transform: translateY(-15px);
+        p{
+          opacity:1;
+        }
+      }
+    }
+    .cover {
+      content: "";
+      display: block;
+      background-color: #E10D0D;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      -webkit-transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
 }
 
 @-webkit-keyframes underline {
