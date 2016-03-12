@@ -129,7 +129,6 @@ body {
 }
 
 #content {
-  height: 5000px;
   .column {
     padding: 1rem 1rem 1rem;
   }
@@ -191,7 +190,9 @@ body {
     }
   }
 }
+#info{
 
+}
 @-webkit-keyframes underline {
   0% {
     width: 0;

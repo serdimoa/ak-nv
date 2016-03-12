@@ -13,6 +13,7 @@ import * as DataToContent from "./datatocontent";
 import * as Data from "data";
 import {contenttopage} from "./datatocontent";
 import Element = JSX.Element;
+import {ContentInterface} from "./data";
 
 WebFont.load({
     google: {
@@ -143,7 +144,7 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
                     size = "column small-12 medium-8 large-8 ";
                     break;
             }
-            return <Card Size={size} key={i} Title={data.Title} Img={img} />;
+            return <Card Size={size} key={i} Info={data.Info} Data={data} Title={data.Title} Img={img} />;
         });
         return (
             <div className="full-width">
@@ -153,14 +154,32 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 
     }
 }
+// <span>{this.props.Info.Text}</span> Example
+
+export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoState> {
+    constructor(props: Data.CardInfoProps) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>{ this.props.cardClass.Size}</div>
+        );
+    }
+}
 
 export class Card extends React.Component<Data.CardProps, Data.CardState> {
     constructor(props: Data.CardProps) {
         super(props);
     }
+
+    handleClick(e: ContentInterface) : any {
+        ReactDOM.render(React.createElement(CardInfo, {cardClass: e}), document.getElementById("info"));
+
+    }
+
     render() {
         return(
-            <div className={ this.props.Size }>
+            <div onClick={ this.handleClick.bind(null, this.props.Data) } className={ this.props.Size }>
                 <article className="card" style={{backgroundImage:this.props.Img}}>
                     <h3>
                         <span>{this.props.Title}</span>
@@ -207,4 +226,3 @@ ReactDOM
                 "content"
             )
     );
-

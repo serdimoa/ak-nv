@@ -7,10 +7,15 @@ export interface HeaderInterface {
     showText(): string;
 }
 
+interface InfoInterface {
+    Text?: string;
+}
+
 export interface ContentInterface {
     Size?: number;
     Title?: string;
     Img?: string;
+    Info?: InfoInterface;
     forEach(f: Function): void;
     map(f: Function): void;
 }
@@ -43,10 +48,21 @@ export interface ContentProps {
 export interface ContentState {
 }
 
+export interface CardInfoProps {
+    cardClass?: ContentInterface;
+
+}
+
+export interface CardInfoState {
+
+}
+
 export interface CardProps {
     Size?: string;
     Title?: string;
     Img?: string;
+    Data?: ContentInterface;
+    Info?: InfoInterface;
     key?: number;
 }
 
