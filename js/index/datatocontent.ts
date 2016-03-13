@@ -17,10 +17,15 @@ export module DataToContent {
 export var contents =  <ContentInterface>[
     {
         Size: 1,
-        Title: "title1",
+        Title: "Vianor",
         Img: "http://placehold.it/616x480",
         Info: {
-            Text: "Text"
+            Img: "http://placehold.it/1280x500",
+            Text: ["Смена резины R14", "Ремонт порезов"],
+            Type: "Шиномонтажная мастерская",
+            Phone: "+7(3466) 67-24-51",
+            Time: "Ежедневно 09:00-21:00",
+            Url: "https://vk.com/vianor86"
         }
     },
     {
@@ -28,23 +33,33 @@ export var contents =  <ContentInterface>[
         Title: "title2",
         Img: "http://placehold.it/1275x480",
         Info: {
+            Img: "http://placehold.it/1280x500",
             Text: "Text"
         }
     },
     {
         Size: 2,
-        Title: "title4",
+        Title: "ТИКАМИС",
         Img: "http://placehold.it/1275x480",
         Info: {
-            Text: "Text"
-        }
+            Img: "http://placehold.it/1280x500",
+            Type: "Сеть сервисмаркетов",
+            Phone: "8–800–200–26–67",
+            Time: "Ежедневно 09:00–20:00",
+            Url: "http://www.tikamis.ru"
+       }
     },
     {
         Size: 1,
         Title: "title3",
         Img: "http://placehold.it/616x480",
         Info: {
-            Text: "Text"
+            Img: "http://placehold.it/1280x500",
+            Text: "Text",
+            Type: "",
+            Phone: "",
+            Time: "",
+            Url: ""
         }
     },
     {
@@ -52,6 +67,7 @@ export var contents =  <ContentInterface>[
         Title: "Тикамис",
         Img: "http://placehold.it/616x480",
         Info: {
+            Img: "http://placehold.it/1280x500",
             Text: "Text"
         }
     },
@@ -60,6 +76,7 @@ export var contents =  <ContentInterface>[
         Title: "title5",
         Img: "http://placehold.it/616x480",
         Info: {
+            Img: "http://placehold.it/1280x500",
             Text: "Text"
         }
     },
@@ -68,6 +85,7 @@ export var contents =  <ContentInterface>[
         Title: "title5",
         Img: "http://placehold.it/616x480",
         Info: {
+            Img: "http://placehold.it/1280x500",
             Text: "Text"
         }
     }];

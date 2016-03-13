@@ -8,7 +8,12 @@ export interface HeaderInterface {
 }
 
 interface InfoInterface {
-    Text?: string;
+    Img?: string;
+    Text?: string[];
+    Type?: string;
+    Phone?: string;
+    Time?: string;
+    Url?: string;
 }
 
 export interface ContentInterface {

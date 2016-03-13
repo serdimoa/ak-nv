@@ -25,7 +25,6 @@ body {
 
 .burger-icon {
   @include burger(25px, 3px, 7px, #555, 25px);
-
 }
 
 .Circle {
@@ -129,6 +128,8 @@ body {
 }
 
 #content {
+  background-color: #F8F8F8;
+
   .column {
     padding: 1rem 1rem 1rem;
   }
@@ -191,7 +192,51 @@ body {
   }
 }
 #info{
-
+  .info__body {
+    overflow: auto;
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 50px;
+    z-index: 999999;
+    box-shadow: -3px -9px 15px 6px rgba(0, 0, 0, 0.56);
+    background: #fff;
+    .info-title{
+      padding: 75px 0 45px;
+      text-align: left;
+      span{
+        font-weight: 600;
+        font-size: 3rem;
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .close{
+      border-radius: 50%;
+      background-color: $c-light-grey ;
+      padding: 25px;
+      top: abs(25px);
+      position: absolute;
+      right: abs(25px);
+      transition: all .03s $ease-in-back;
+      .close-icon{
+        @include burger(25px, 3px, 7px, #555, 25px);
+        @include burger-to-cross;
+      }
+      &:hover{
+        box-shadow: 1px 1px 30px 1px rgba(225, 13, 13, 0.56);
+        border: rgba(225, 13, 13, 0.36) solid 2px;
+      }
+    }
+    .info-img{
+      width:100%;
+    }
+    .info-content{
+      padding-top: 50px;
+    }
+  }
 }
 @-webkit-keyframes underline {
   0% {

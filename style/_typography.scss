@@ -117,8 +117,8 @@ section > h1:first-child { // Main page heading with yellow underline
       top: 100%; left: 50%;
       width: 24rem;
       height: .9rem;
-      margin: 5rem 0 0 -12rem;
-      background: $c-yellow;
+      margin: 3rem 0 0 -12rem;
+      background: $c-red;
     }
   }
 
@@ -155,7 +155,7 @@ section > h1:first-child { // Main page heading with yellow underline
 .underline {
 
   position: relative;
-  padding-bottom: 0.4em;
+  padding-bottom: 0.2em;
   margin-bottom: 2em;
 
   &:after {
@@ -164,8 +164,8 @@ section > h1:first-child { // Main page heading with yellow underline
     display: block;
     width: 100px;
     height: 8px;
-    margin-bottom: -3rem;
-    background: $c-yellow;
+    margin-bottom: 0;
+    background: $c-red;
   }
 }
 

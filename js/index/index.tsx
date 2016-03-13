@@ -118,8 +118,8 @@ export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> 
         return (
             <div className="row center-vertical">
                 <div className="container-medium float-center">
-                    <h1>
-                        {index_data.showText()}
+                    <h1 className="section-title">
+                        <span>{index_data.showText()}</span>
                     </h1>
                 </div>
             </div>
@@ -162,7 +162,19 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
     }
     render() {
         return (
-            <div>{ this.props.cardClass.Size}</div>
+            <div className="info__body">
+                <div className="info-title"><span className="underline">{ this.props.cardClass.Title}</span></div>
+                <button className="close">
+                    <i className=" close-icon">
+                    </i>
+                </button>
+                <div className="info-img">
+                    <img src={ this.props.cardClass.Info.Img } className="" alt="logo image"/>
+                </div>
+                <div className="info-content">
+                    { this.props.cardClass.Size}
+                </div>
+            </div>
         );
     }
 }

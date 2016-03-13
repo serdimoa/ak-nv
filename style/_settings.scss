@@ -3,7 +3,6 @@
 @import "../bower_components/sass-burger/burger";
 @import "../bower_components/animatewithsass/animate";
 
-
 /*--------------------------------
 
 	Media queries
@@ -20,7 +19,6 @@ $mq-full: 1560px;
 
 $mq-small-height: 450px;
 $mq-mobile-nav: 650px;
-
 
 /*--------------------------------
 
@@ -73,7 +71,6 @@ $s-primary-nav-offset-large: 4rem;
 
 $s-radius: 1rem;
 
-
 /*--------------------------------
 
 	Numbers
@@ -85,7 +82,6 @@ $n-light: 300;
 $n-regular: 400;
 $n-bold: 700;
 $n-black: 900;
-
 
 /*--------------------------------
 
@@ -100,7 +96,6 @@ $z-header: 4;
 $z-primary-nav-fixed: 3;
 $z-footer: 2;
 $z-page: 1;
-
 
 /*--------------------------------
 
@@ -124,12 +119,12 @@ $c-green: #60c6b0;
 $c-blue: #3498db;
 $c-yellow: #ffee00;
 $c-coral: #e36562;
+$c-red: #E10D0D;
 $c-purple: #6e56c2;
 
 /* Social */
 $c-facebook: #3c5a95;
 $c-twitter: #4099ff;
-
 
 /*--------------------------------
 
@@ -138,48 +133,47 @@ $c-twitter: #4099ff;
 */
 
 //	Cubic
-$ease-in-cubic: cubic-bezier(.55,.055,.675,.19);
-$ease-out-cubic: cubic-bezier(.215,.61,.355,1);
-$ease-in-out-cubic: cubic-bezier(.645,.045,.355,1);
+$ease-in-cubic: cubic-bezier(.55, .055, .675, .19);
+$ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+$ease-in-out-cubic: cubic-bezier(.645, .045, .355, 1);
 
 //	Circ
-$ease-in-circ: cubic-bezier(.6,.04,.98,.335);
-$ease-out-circ: cubic-bezier(.075,.82,.165,1);
-$ease-in-out-circ: cubic-bezier(.785,.135,.15,.86);
+$ease-in-circ: cubic-bezier(.6, .04, .98, .335);
+$ease-out-circ: cubic-bezier(.075, .82, .165, 1);
+$ease-in-out-circ: cubic-bezier(.785, .135, .15, .86);
 
 //	Expo
-$ease-in-expo: cubic-bezier(.95,.05,.795,.035);
-$ease-out-expo: cubic-bezier(.19,1,.22,1);
-$ease-in-out-expo: cubic-bezier(1,0,0,1);
+$ease-in-expo: cubic-bezier(.95, .05, .795, .035);
+$ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
 
 //	Quad
-$ease-in-quad: cubic-bezier(.55,.085,.68,.53);
-$ease-out-quad: cubic-bezier(.25,.46,.450,.94);
-$ease-in-out-quad: cubic-bezier(.455,.03,.515,.955);
+$ease-in-quad: cubic-bezier(.55, .085, .68, .53);
+$ease-out-quad: cubic-bezier(.25, .46, .450, .94);
+$ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
 
 //	Quart
-$ease-in-quart: cubic-bezier(.895,.03,.685,.22);
-$ease-out-quart: cubic-bezier(.165,.84,.44,1);
-$ease-in-out-quart: cubic-bezier(.77,0,.175,1);
+$ease-in-quart: cubic-bezier(.895, .03, .685, .22);
+$ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+$ease-in-out-quart: cubic-bezier(.77, 0, .175, 1);
 
 //	Quint
-$ease-in-quint: cubic-bezier(.755,.05,.855,.06);
-$ease-out-quint: cubic-bezier(.23,1,.320,1);
-$ease-in-out-quint: cubic-bezier(.86,0,.07,1);
+$ease-in-quint: cubic-bezier(.755, .05, .855, .06);
+$ease-out-quint: cubic-bezier(.23, 1, .320, 1);
+$ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
 
 //	Sine
-$ease-in-sine: cubic-bezier(.47,0,.745,.715);
-$ease-out-sine: cubic-bezier(.39,.575,.565,1);
-$ease-in-out-sine: cubic-bezier(.445,.05,.55,.95);
+$ease-in-sine: cubic-bezier(.47, 0, .745, .715);
+$ease-out-sine: cubic-bezier(.39, .575, .565, 1);
+$ease-in-out-sine: cubic-bezier(.445, .05, .55, .95);
 
 //	Back
-$ease-in-back: cubic-bezier(.6,-.28,.735,.045);
-$ease-out-back: cubic-bezier(.175,.885,.32,1.275);
-$ease-in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
+$ease-in-back: cubic-bezier(.6, -.28, .735, .045);
+$ease-out-back: cubic-bezier(.175, .885, .32, 1.275);
+$ease-in-out-back: cubic-bezier(.68, -0.55, .265, 1.55);
 
 //	Smooth fade
-$ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
-
+$ease-smooth-fade: cubic-bezier(.365, .005, .355, 1);
 
 /*---------------------------
 
@@ -187,82 +181,81 @@ $ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
 
 */
 
-
 .cf {
-        &:before,
-        &:after {
-                content: '';
-                display: table;
-        }
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
-        &:after {
-                clear: both;
-        }
+  &:after {
+    clear: both;
+  }
 
-        .lt-ie8 & {
-                zoom: 1;
-        }
+  .lt-ie8 & {
+    zoom: 1;
+  }
 }
 
 .link-style {
-        color: $c-links;
-        font-weight: $n-bold;
-        border-bottom: 2px solid $c-white;
-        text-decoration: none;
+  color: $c-links;
+  font-weight: $n-bold;
+  border-bottom: 2px solid $c-white;
+  text-decoration: none;
 
-        &:hover {
-                border-bottom: 2px solid $c-links;
-        }
+  &:hover {
+    border-bottom: 2px solid $c-links;
+  }
 }
 
 %unlist {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 %hardware {
-        backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 %unselectable {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 %antialias {
-        -webkit-font-smoothing: antialiased;
-        -moz-font-smoothing: antialiased;
-        font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 %vertical-align {
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 %preserve-3d {
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 %content-margins {
 
-        > *:first-child {
-                margin-top: 0;
-        }
+  > *:first-child {
+    margin-top: 0;
+  }
 
-        > *:last-child {
-                margin-bottom: 0;
-        }
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 /*--------------------------------
@@ -271,6 +264,6 @@ $ease-smooth-fade: cubic-bezier(.365,.005,.355,1);
 
 */
 
-@function grid-calc($t, $c){
-        @return 100% / ( $t / $c );
+@function grid-calc($t, $c) {
+  @return 100% / ( $t / $c );
 }
