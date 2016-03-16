@@ -13,6 +13,7 @@ var browserSync = require('browser-sync').create();
 var watchify = require('watchify');
 var reload = browserSync.reload;
 var del = require('del');
+var sass = require('gulp-sass');
 var b = browserify('.tmp/index/index.js');
 var project = ts.createProject('tsconfig.json', {typescript: typescript});
 var result;
@@ -47,7 +48,8 @@ gulp.task('bundlereload', ['js'], function() {
 
 gulp.task('csscopy', function() {
   return gulp
-      .src(['style/*.*'])
+      .src(['style/main.scss'])
+      .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('dist'));
 });
 
@@ -67,7 +69,8 @@ gulp.task('imagesreload', function() {
 
 gulp.task('csscopyreload', function() {
   return gulp
-      .src(['style/*.*'])
+      .src(['style/**/*.scss'])
+      .pipe(sass.sync().on('error', sass.logError))
       .pipe(gulp.dest('dist'))
       .pipe(reload({
         stream: true
@@ -93,7 +96,7 @@ gulp.task('browser-sync', ['html', 'bundle', 'images', 'csscopy'], function() {
     gulp.start('bundlereload');
   });
 
-  gulp.watch('style/*.css').on('change', function() {
+  gulp.watch('style/**/*.scss').on('change', function() {
     gulp.start('csscopyreload');
   });
 

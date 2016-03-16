@@ -21891,6 +21891,7 @@ body {
     top: 25px;
     position: absolute;
     right: 25px;
+    border: transparent solid 2px;
     transition: all 0.03s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
     #info .info__body .close .close-icon {
       position: relative;
@@ -21936,8 +21937,7 @@ body {
         -o-transform: translateY(-10px) rotate(-45deg);
         transform: translateY(-10px) rotate(-45deg); }
     #info .info__body .close:hover {
-      box-shadow: 1px 1px 30px 1px rgba(225, 13, 13, 0.56);
-      border: rgba(225, 13, 13, 0.36) solid 2px; }
+      box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.56); }
   #info .info__body .info-img {
     width: 100%; }
   #info .info__body .info-content {

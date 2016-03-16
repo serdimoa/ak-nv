@@ -198,10 +198,13 @@ body {
     width: 50%;
     height: 100%;
     top: 0;
-    right: 50px;
+    right: 0;
     z-index: 999999;
     box-shadow: -3px -9px 15px 6px rgba(0, 0, 0, 0.56);
     background: #fff;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
     .info-title{
       padding: 75px 0 45px;
       text-align: left;
@@ -220,14 +223,17 @@ body {
       top: abs(25px);
       position: absolute;
       right: abs(25px);
+      &:focus{
+        outline: none;
+      }
+      border: rgba(0, 0, 0, 0) solid 2px;
       transition: all .03s $ease-in-back;
       .close-icon{
         @include burger(25px, 3px, 7px, #555, 25px);
         @include burger-to-cross;
       }
       &:hover{
-        box-shadow: 1px 1px 30px 1px rgba(225, 13, 13, 0.56);
-        border: rgba(225, 13, 13, 0.36) solid 2px;
+        box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.56);
       }
     }
     .info-img{

@@ -1,12 +1,17 @@
 /// <reference path="../../typings/browser/ambient/react/react.d.ts" />
 /// <reference path="../../typings/browser/ambient/react-dom/react-dom.d.ts" />
+/// <reference path="../../typings/browser/ambient/lodash/lodash.d.ts"/>
 /// <reference path="../../typings/browser/ambient/webfontloader/webfontloader.d.ts"/>
+/// <reference path="../../typings/browser/ambient/foundation-sites/foundation-sites.d.ts"/>
 ///<reference path="data.d.ts"/>
 ///<reference path="datatopage.ts"/>
 ///<reference path="datatocontent.ts"/>
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import * as Foundation from "Foundation";
+import * as Lodash from "lodash";
+import { Spring } from "../../node_modules/react-motion/src/react-motion";
 import * as WebFont from "webfontloader";
 import {index_data} from "./datatopage";
 import * as DataToContent from "./datatocontent";
@@ -51,16 +56,13 @@ export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Da
                     <div className="menu-centered">
                         <ul className="menu vertical">
                             <li>
-                                <a href="#">One</a>
+                                <a href="#">Главная</a>
                             </li>
                             <li>
-                                <a href="#">Two</a>
+                                <a href="#">Арендаторам</a>
                             </li>
                             <li>
-                                <a href="#">Three</a>
-                            </li>
-                            <li>
-                                <a href="#">Four</a>
+                                <a href="#">Контакты</a>
                             </li>
                         </ul>
                     </div>
@@ -160,11 +162,16 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
     constructor(props: Data.CardInfoProps) {
         super(props);
     }
+
+    Animations () {
+        var ReactCSSTransitionGroup = Spring ;
+
+    }
     render() {
         return (
-            <div className="info__body">
+            <div className="info__body fadeInLeftBig">
                 <div className="info-title"><span className="underline">{ this.props.cardClass.Title}</span></div>
-                <button className="close">
+                <button className="close" onClick={this.handleClick}>
                     <i className=" close-icon">
                     </i>
                 </button>
@@ -177,6 +184,13 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
             </div>
         );
     }
+    componentWillUnmount() {
+        return false;
+    }
+
+    handleClick() : any {
+        ReactDOM.unmountComponentAtNode(document.getElementById("info"));
+    }
 }
 
 export class Card extends React.Component<Data.CardProps, Data.CardState> {
@@ -185,6 +199,8 @@ export class Card extends React.Component<Data.CardProps, Data.CardState> {
     }
 
     handleClick(e: ContentInterface) : any {
+        //toggleClass(document.getElementById(""), "");
+
         ReactDOM.render(React.createElement(CardInfo, {cardClass: e}), document.getElementById("info"));
 
     }
