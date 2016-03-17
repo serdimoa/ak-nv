@@ -1,8 +1,4 @@
-/// <reference path="../../typings/browser/ambient/react/react.d.ts" />
-/// <reference path="../../typings/browser/ambient/react-dom/react-dom.d.ts" />
-/// <reference path="../../typings/browser/ambient/lodash/lodash.d.ts"/>
-/// <reference path="../../typings/browser/ambient/webfontloader/webfontloader.d.ts"/>
-/// <reference path="../../typings/browser/ambient/foundation-sites/foundation-sites.d.ts"/>
+/// <reference path="../../typings/browser.d.ts" />
 ///<reference path="data.d.ts"/>
 ///<reference path="datatopage.ts"/>
 ///<reference path="datatocontent.ts"/>
@@ -11,7 +7,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as Foundation from "Foundation";
 import * as Lodash from "lodash";
-import { Spring } from "../../node_modules/react-motion/src/react-motion";
+import { Motion, spring } from "react-motion";
 import * as WebFont from "webfontloader";
 import {index_data} from "./datatopage";
 import * as DataToContent from "./datatocontent";
@@ -27,11 +23,11 @@ WebFont.load({
 });
 
 namespace constants {
-    export var LOGO: string = "image/logomenu.svg";
+    export var LOGO:string = "image/logomenu.svg";
 }
 
-var stateOverflow = function (): void {
-    var overflowBody: string = document.getElementById("body").style.overflow;
+var stateOverflow = function ():void {
+    var overflowBody:string = document.getElementById("body").style.overflow;
     if (overflowBody === "auto" || overflowBody === "") {
         document.getElementById("body").style.overflow = "hidden";
     } else {
@@ -40,11 +36,11 @@ var stateOverflow = function (): void {
 };
 
 export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Data.NavigationOpenState> {
-    constructor(props: Data.NavigationOpenProps) {
+    constructor(props:Data.NavigationOpenProps) {
         super(props);
     }
 
-    render() {
+    render():JSX.Element {
         return (
             <div id="navigation-open" className={this.props.active ? "is-active z-index-10" : "is-inactive" }>
                 <div className="row">
@@ -73,7 +69,7 @@ export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Da
 }
 
 export class Navigation extends React.Component<Data.NavigationProps, Data.NavigationState> {
-    state: Data.NavigationState = {condition: false, showMenu: false};
+    state:Data.NavigationState = {condition: false, showMenu: false};
 
     constructor() {
         super();
@@ -88,7 +84,7 @@ export class Navigation extends React.Component<Data.NavigationProps, Data.Navig
         stateOverflow();
     }
 
-    render() {
+    render():JSX.Element {
         return (
             <div>
                 <NavigationOpen active={this.state.showMenu}/>
@@ -116,7 +112,7 @@ export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> 
         super();
     }
 
-    render() {
+    render():JSX.Element {
         return (
             <div className="row center-vertical">
                 <div className="container-medium float-center">
@@ -134,10 +130,10 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
         super();
     }
 
-    render() {
-        var card_generator = contenttopage.map(function(data, i) {
-            var size: string = "";
-            var img: string = "url(" + data.Img + ")";
+    render():JSX.Element {
+        var card_generator = contenttopage.map(function (data, i) {
+            var size:string = "";
+            var img:string = "url(" + data.Img + ")";
             switch (data.Size) {
                 case 1:
                     size = "column small-12 medium-4 large-4 ";
@@ -146,11 +142,11 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
                     size = "column small-12 medium-8 large-8 ";
                     break;
             }
-            return <Card Size={size} key={i} Info={data.Info} Data={data} Title={data.Title} Img={img} />;
+            return <Card Size={size} key={i} Info={data.Info} Data={data} Title={data.Title} Img={img}/>;
         });
         return (
             <div className="full-width">
-                    {card_generator}
+                {card_generator}
             </div>
         );
 
@@ -159,54 +155,61 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 // <span>{this.props.Info.Text}</span> Example
 
 export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoState> {
-    constructor(props: Data.CardInfoProps) {
+    constructor(props:Data.CardInfoProps) {
         super(props);
+        this.state = {open: false};
+        this.handleClick = this.handleClick.bind(this);
     }
-
-    Animations () {
-        var ReactCSSTransitionGroup = Spring ;
-
+    handleClick():void {
+        console.log(this);
+        this.setState({open: !this.state.open});
     }
-    render() {
+    render():JSX.Element {
         return (
-            <div className="info__body fadeInLeftBig">
-                <div className="info-title"><span className="underline">{ this.props.cardClass.Title}</span></div>
-                <button className="close" onClick={this.handleClick}>
-                    <i className=" close-icon">
-                    </i>
-                </button>
-                <div className="info-img">
-                    <img src={ this.props.cardClass.Info.Img } className="" alt="logo image"/>
+            <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
+                {({x}) =>
+                <div className="info__body fadeInLeftBig"
+                     style={{
+                        WebkitTransform: `translate3d(${x}%, 0, 0)`,
+                        transform: `translate3d(${x}%, 0, 0)`
+                        }}>
+                    <div className="info-title">
+                        <span className="underline">{ this.state.open ? this.props.cardClass.Title : ""}</span>
+                    </div>
+                    <button className="close" onClick={this.state.open ? this.handleClick.bind(this) : ""}>
+                        <i className=" close-icon">
+                        </i>
+                    </button>
+                    <div className="info-img">
+                        <img src={this.state.open ?  this.props.cardClass.Info.Img : "" } className="" alt="logo image"/>
+                    </div>
+                    <div className="info-content">
+                        {this.state.open ?  this.props.cardClass.Size : ""}
+                    </div>
                 </div>
-                <div className="info-content">
-                    { this.props.cardClass.Size}
-                </div>
-            </div>
+                    }
+            </Motion>
         );
     }
-    componentWillUnmount() {
-        return false;
-    }
 
-    handleClick() : any {
-        ReactDOM.unmountComponentAtNode(document.getElementById("info"));
+    CardClick(card:{cardClass: ContentInterface, open: boolean}):void {
+        this.handleClick();
     }
 }
 
 export class Card extends React.Component<Data.CardProps, Data.CardState> {
-    constructor(props: Data.CardProps) {
+    constructor(props:Data.CardProps) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(e: ContentInterface) : any {
+    handleClick(e:ContentInterface):any {
         //toggleClass(document.getElementById(""), "");
-
-        ReactDOM.render(React.createElement(CardInfo, {cardClass: e}), document.getElementById("info"));
-
+        CardInfo.prototype.CardClick({cardClass:e, open:true});
     }
 
-    render() {
-        return(
+    render():JSX.Element {
+        return (
             <div onClick={ this.handleClick.bind(null, this.props.Data) } className={ this.props.Size }>
                 <article className="card" style={{backgroundImage:this.props.Img}}>
                     <h3>
@@ -254,3 +257,8 @@ ReactDOM
                 "content"
             )
     );
+
+ReactDOM
+    .render(React
+        .createElement(CardInfo),
+        document.getElementById("info"));
