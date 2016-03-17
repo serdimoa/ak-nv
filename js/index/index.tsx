@@ -155,13 +155,14 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 // <span>{this.props.Info.Text}</span> Example
 
 export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoState> {
+    state:Data.CardInfoState = {open: false};
     constructor(props:Data.CardInfoProps) {
         super(props);
-        this.state = {open: false};
+
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick():void {
-        console.log(this);
+        console.log(this.state);
         this.setState({open: !this.state.open});
     }
     render():JSX.Element {
