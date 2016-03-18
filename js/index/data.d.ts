@@ -4,14 +4,13 @@
 /// <reference path="../../typings/browser.d.ts" />
 import * as React from "react";
 
-export interface HeaderInterface extends React.Props<any> {
-    HeaderText?: string;
-    showText(): string;
+export interface State extends React.Props<any> {
+    DataHeader: string;
+    DataInfo: ContentInterface[];
 }
 
 interface InfoInterface {
     Img?: string;
-    Text?: string[];
     Type?: string;
     Phone?: string;
     Time?: string;
@@ -23,8 +22,6 @@ export interface ContentInterface {
     Title?: string;
     Img?: string;
     Info?: InfoInterface;
-    forEach(f: Function): void;
-    map(f: Function): void;
 }
 
 export interface NavigationOpenProps extends React.Props<any> {
