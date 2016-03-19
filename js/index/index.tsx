@@ -12,7 +12,6 @@ import * as DataToContent from "./datatocontent";
 import * as Data from "data";
 import {contenttopage} from "./datatocontent";
 import Element = JSX.Element;
-import {ContentInterface} from "./data";
 
 WebFont.load({
     google: {
@@ -38,6 +37,8 @@ export class AutoContinent extends React.Component<{}, Data.State> {
         super(props);
         this.state = {
             DataHeader: "Самый крупный торговый центр автозапчастей в Нижневартовске",
+            condition: false,
+            showMenu: false,
             DataInfo: [
                 {
                     Size: 1,
@@ -220,10 +221,10 @@ export class AutoContinent extends React.Component<{}, Data.State> {
     render():JSX.Element {
         return (
             <div>
-                <Navigation />
-                <Header />
-                <Content />
-
+                <Navigation condition={this.state.condition} showMenu={this.state.showMenu}/>
+                <Header DataHeader={this.state.DataHeader}/>
+                <Content DataInfo={this.state.DataInfo }/>
+                <CardInfo />
             </div>
         );
     }
@@ -264,11 +265,14 @@ export class NavigationOpen extends React.Component<Data.NavigationOpenProps, Da
 }
 
 export class Navigation extends React.Component<Data.NavigationProps, Data.NavigationState> {
-    state:Data.NavigationState = {condition: false, showMenu: false};
 
     constructor() {
         super();
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentWillMount() {
+        this.state = {showMenu: this.props.showMenu, condition: this.props.condition};
     }
 
     handleClick() {
@@ -313,7 +317,7 @@ export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> 
                 <div className="row center-vertical">
                     <div className="container-medium float-center">
                         <h1 className="section-title">
-                            <span>{index_data.showText()}</span>
+                            <span>{this.props.DataHeader}</span>
                         </h1>
                     </div>
                 </div>
@@ -327,8 +331,12 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
         super();
     }
 
+    componentWillMount() {
+        this.state = {DataInfo: this.props.DataInfo};
+    }
+
     render():JSX.Element {
-        var card_generator = contenttopage.map(function (data, i) {
+        var card_generator = this.state.DataInfo.map(function (data, i) {
             var size:string = "";
             var img:string = "url(" + data.Img + ")";
             switch (data.Size) {
@@ -342,11 +350,14 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
             return <Card Size={size} key={i} Info={data.Info} Data={data} Title={data.Title} Img={img}/>;
         });
         return (
-            <section id="content" className="page-wrapper">
-                <div className="full-width">
-                    {card_generator}
-                </div>
-            </section>
+            <div>
+                <section id="content" className="page-wrapper">
+                    <div className="full-width">
+                        {card_generator}
+                    </div>
+                </section>
+                <CardInfo />
+            </div>
         );
 
     }
@@ -359,9 +370,14 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
         this.state = {open: false};
 
         this.handleClick = this.handleClick.bind(this);
-        console.log(this);
 
     }
+
+    statics = {
+        cardClick():void {
+            console.log(this);
+        }
+    };
 
     handleClick():void {
         this.setState({open: !this.state.open});
@@ -397,10 +413,6 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
             </Motion>
         );
     }
-
-    CardClick(card:{cardClass: ContentInterface, open: boolean}):void {
-        this.handleClick();
-    }
 }
 
 export class Card extends React.Component<Data.CardProps, Data.CardState> {
@@ -409,9 +421,10 @@ export class Card extends React.Component<Data.CardProps, Data.CardState> {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(e:ContentInterface):any {
+    handleClick(e:Data.ContentInterface):any {
+        CardInfo.cardClick();
         // toggleClass(document.getElementById(""), "");
-        CardInfo.CardClick.bind({cardClass: e, open: true});
+        // CardInfo.CardClick.bind({cardClass: e, open: true});
     }
 
     render():JSX.Element {
@@ -431,40 +444,5 @@ export class Card extends React.Component<Data.CardProps, Data.CardState> {
 
 ReactDOM
     .render(React
-
-        .createElement(Header)
-
-        ,
-        document
-            .getElementById(
-                "header"
-            )
-    );
-ReactDOM
-    .render(React
-
-        .createElement(Navigation)
-
-        ,
-        document
-            .getElementById(
-                "navigation"
-            )
-    );
-
-ReactDOM
-    .render(React
-
-        .createElement(Content)
-
-        ,
-        document
-            .getElementById(
-                "content"
-            )
-    );
-
-ReactDOM
-    .render(React
-        .createElement(CardInfo),
-        document.getElementById("info"));
+        .createElement(AutoContinent),
+        document.getElementById("body"));

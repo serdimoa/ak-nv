@@ -6,6 +6,8 @@ import * as React from "react";
 
 export interface State extends React.Props<any> {
     DataHeader: string;
+    condition: boolean;
+    showMenu: boolean;
     DataInfo: ContentInterface[];
 }
 
@@ -32,6 +34,8 @@ export interface NavigationOpenState extends React.Props<any> {
 }
 
 export interface NavigationProps extends React.Props<any> {
+    condition?: boolean;
+    showMenu?: boolean;
 }
 
 export interface NavigationState extends React.Props<any> {
@@ -40,21 +44,23 @@ export interface NavigationState extends React.Props<any> {
 }
 
 export interface HeaderProps extends React.Props<any> {
+    DataHeader: string;
 }
 
 export interface HeaderState extends React.Props<any> {
 }
 
 export interface ContentProps extends React.Props<any> {
+    DataInfo: ContentInterface[];
     // cardClass?: string;
 }
 
 export interface ContentState extends React.Props<any> {
+    DataInfo: ContentInterface[];
 }
 
 export interface CardInfoProps extends React.Props<any> {
     cardClass?: ContentInterface;
-
 }
 
 export interface CardInfoState extends React.Props<any> {
@@ -71,4 +77,5 @@ export interface CardProps extends React.Props<any> {
 }
 
 export interface CardState extends React.Props<any> {
+    open: boolean;
 }
