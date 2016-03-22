@@ -13,11 +13,11 @@ var browserSync = require('browser-sync').create();
 var watchify = require('watchify');
 var reload = browserSync.reload;
 var del = require('del');
+var $ = require('gulp-load-plugins')();
 var sass = require('gulp-sass');
 var b = browserify('.tmp/index/index.js');
 var project = ts.createProject('tsconfig.json', {typescript: typescript});
 var result;
-
 gulp.task('js', function() {
   result = gulp.src('js/**/*{ts,tsx}')
       .pipe(ts(project));
@@ -70,12 +70,29 @@ gulp.task('imagesreload', function() {
 gulp.task('csscopyreload', function() {
   return gulp
       .src(['style/**/*.scss'])
-      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(sas.sync().on('error', sass.logError))
       .pipe(gulp.dest('dist'))
       .pipe(reload({
         stream: true
       }));
 
+});
+
+gulp.task('glyph', function() {
+  return gulp.src('fontello.config.json')
+      .pipe($.fontello())
+      .pipe($.print())
+      .pipe(gulp.dest('dist/fontello'));
+});
+
+gulp.task('glyphReload', function() {
+  return gulp.src('fontello.config.json')
+      .pipe($.fontello())
+      .pipe($.print())
+      .pipe(gulp.dest('dist/fontello'))
+      .pipe(reload({
+        stream: true
+      }));
 });
 
 function htmlChange() {
@@ -102,6 +119,9 @@ gulp.task('browser-sync', ['html', 'bundle', 'images', 'csscopy'], function() {
 
   gulp.watch('images/*.*').on('change', function() {
     gulp.start('imagesreload');
+  });
+  gulp.watch('fontello.config.json').on('change', function() {
+    gulp.start('glyphReload');
   });
 });
 

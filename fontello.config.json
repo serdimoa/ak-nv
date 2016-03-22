@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "ee22dc89481ea63f27654f59dcace804",
+      "css": "time",
+      "code": 59392,
+      "src": "linecons"
+    },
+    {
+      "uid": "6a9f3405aba67bcaee81e7ea38946b27",
+      "css": "phone",
+      "code": 59393,
+      "src": "linecons"
+    },
+    {
+      "uid": "815503841e980c848f55e0271deacead",
+      "css": "url",
+      "code": 59394,
+      "src": "entypo"
+    }
+  ]
+}

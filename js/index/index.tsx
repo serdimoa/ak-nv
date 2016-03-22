@@ -12,6 +12,7 @@ import * as DataToContent from "./datatocontent";
 import * as Data from "data";
 import {contenttopage} from "./datatocontent";
 import Element = JSX.Element;
+import Mixin = __React.Mixin;
 
 WebFont.load({
     google: {
@@ -32,6 +33,22 @@ var stateOverflow = function ():void {
     }
 };
 
+var toggleClass = function (el, className:string, del:boolean):void {
+    if (del === true) {
+        if (el.classList) {
+            el.classList.remove(className);
+        } else {
+            el.className = el.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ");
+        }
+    } else {
+        if (el.classList) {
+            el.classList.add(className);
+        } else {
+            el.className += " " + className;
+        }
+    }
+};
+
 export class AutoContinent extends React.Component<{}, Data.State> {
     constructor(props:{}) {
         super(props);
@@ -41,9 +58,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
             showMenu: false,
             DataInfo: [
                 {
-                    Size: 1,
+                    Size: 2,
                     Title: "Vianor",
-                    Img: "http://placehold.it/616x480",
+                    Img: "http://placehold.it/1275x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Шиномонтажная мастерская",
@@ -53,9 +70,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     }
                 },
                 {
-                    Size: 2,
+                    Size: 1,
                     Title: "Запчастер",
-                    Img: "http://placehold.it/1275x480",
+                    Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Магазин автозапчастей для иномарок",
@@ -65,9 +82,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     }
                 },
                 {
-                    Size: 2,
+                    Size: 1,
                     Title: "Тикамис",
-                    Img: "http://placehold.it/1275x480",
+                    Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Сеть сервисмаркетов",
@@ -77,9 +94,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     }
                 },
                 {
-                    Size: 1,
+                    Size: 2,
                     Title: "Специализированный магазин аккумуляторов",
-                    Img: "http://placehold.it/616x480",
+                    Img: "http://placehold.it/1275x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "",
@@ -172,50 +189,226 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                 },
                 {
                     Size: 1,
-                    Title: "title5",
+                    Title: "Vianor",
                     Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
-                        Type: "",
-                        Phone: "",
-                        Time: "",
-                        Url: ""
+                        Type: "Шиномонтажная мастерская",
+                        Phone: "+7 (3466) 67-24-51",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "https://vk.com/vianor86"
                     }
                 },
                 {
                     Size: 1,
-                    Title: "title5",
+                    Title: "ТИКАМИС",
                     Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
-                        Type: "",
-                        Phone: "",
-                        Time: "",
-                        Url: ""
+                        Type: "Сеть сервисмаркетов",
+                        Phone: "8–800–200–26–67",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "www.tikamis.ru"
                     }
                 },
                 {
                     Size: 1,
-                    Title: "title5",
+                    Title: "Запчастер",
                     Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
-                        Type: "",
-                        Phone: "",
-                        Time: "",
-                        Url: ""
+                        Type: "Магазин автозапчастей для иномарок",
+                        Phone: "+7 (3466) 309–508",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "https://vk.com/zr86ru"
                     }
                 },
                 {
                     Size: 1,
-                    Title: "title5",
+                    Title: "Специализированный магазин аккумуляторов",
                     Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
+                        Type: "ИП Сорокина А.В.",
+                        Phone: "+7 (3466) 69–42–94",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "akb-86.ru"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Автостекольная станция №1",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "торгово-сервисный центр",
+                        Phone: "+7 (3466) 407–405",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "avtosteklo-nv.ru"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Exist.ru",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "интернет-магазин автозапчастей",
+                        Phone: "+7 (3466) 68–66–22",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "www.exist.ru"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Автомикс",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "магазин автоаксессуаров",
+                        Phone: "+7 (3466) 219–219",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "https://vk.com/amixnv"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "KARCHER",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "Официальный дилер",
+                        Phone: "+7 (3466) 51–21–51",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "intcentr86.ru"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Континент",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "Автотехцентр",
+                        Phone: "+7 (3466) 408–086",
+                        Time: "Ежедневно 09:00-21:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Вилон",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "многопрофильная компания",
+                        Phone: "+7 (3466) 53–23–97",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "remont.vividnv.ru"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Китай-город",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "Магазин автозапчастей для китайских автомобилей",
+                        Phone: "+7 (3466) 40–66–44",
+                        Time: "Ежедневно 09:00-21:00",
+                        Url: "китай-город.рф"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Корея-Авто",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "автомагазин",
+                        Phone: "+7 (3466) 48–06–86",
+                        Time: "Ежедневно 09:00-21:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Горбунов Аудио",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "установочный центр",
+                        Phone: "+7 (3466) 52–22–22",
+                        Time: "Ежедневно 09:00-19:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Vianor",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "шинный центр",
+                        Phone: "+7 (3466) 61–41–59",
+                        Time: "Ежедневно 09:00-21:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Ледел Сургут",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "торговая компания",
+                        Phone: "+7 (3466) 67–10–10",
+                        Time: "Ежедневно 09:00-18:00",
+                        Url: "ледел.рф"
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Центр оригинальных запчастей для европейских и американских автомобилей",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Phone: "+7 (3466) 40–80–20",
+                        Time: "Ежедневно 09:00-20:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Авторемни",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "автомагазин",
+                        Phone: "+7 (3466) 67–12–12",
+                        Time: "Ежедневно 09:00-20:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "Магазин оригинальных автозапчастей для японских автомобилей",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "ИП Левашов К.А.",
+                        Phone: "+7 (3466) 22–36–36",
+                        Time: "Ежедневно 09:00-20:00",
+                    }
+                },
+                {
+                    Size: 1,
+                    Title: "АВТОСВЕЧА",
+                    Img: "http://placehold.it/616x480",
+                    Info: {
+                        Img: "http://placehold.it/1280x500",
+                        Type: "автомагазин",
+                        Phone: "+7 (3466) 219–219",
+                        Time: "Ежедневно 09:00-20:00",
                     }
                 }
             ]
-        };
+        }
+        ;
     }
 
     render():JSX.Element {
@@ -224,7 +417,6 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                 <Navigation condition={this.state.condition} showMenu={this.state.showMenu}/>
                 <Header DataHeader={this.state.DataHeader}/>
                 <Content DataInfo={this.state.DataInfo }/>
-                <CardInfo />
             </div>
         );
     }
@@ -329,16 +521,25 @@ export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> 
 export class Content extends React.Component<Data.ContentProps, Data.ContentState> {
     constructor() {
         super();
+
     }
 
     componentWillMount() {
-        this.state = {DataInfo: this.props.DataInfo};
+        this.state = {DataInfo: this.props.DataInfo, show: false};
     }
+
+    static handleClick() {
+        ReactDOM
+            .render(<CardInfo open={true} cardClass={this}/>,
+                document.getElementById("info"));
+    };
 
     render():JSX.Element {
         var card_generator = this.state.DataInfo.map(function (data, i) {
+
             var size:string = "";
             var img:string = "url(" + data.Img + ")";
+            var title:string = data.Title;
             switch (data.Size) {
                 case 1:
                     size = "column small-12 medium-4 large-4 ";
@@ -347,7 +548,17 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
                     size = "column small-12 medium-8 large-8 ";
                     break;
             }
-            return <Card Size={size} key={i} Info={data.Info} Data={data} Title={data.Title} Img={img}/>;
+            return (
+                <div key={i} onClick={Content.handleClick.bind(data)} className={ size }>
+                    <article className="card" style={{backgroundImage:img}}>
+                        <h3>
+                            <span>{title}</span>
+                            <p>Читать подробнее</p>
+                        </h3>
+                        <div className="cover"></div>
+                    </article>
+                </div>
+            );
         });
         return (
             <div>
@@ -356,7 +567,6 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
                         {card_generator}
                     </div>
                 </section>
-                <CardInfo />
             </div>
         );
 
@@ -368,26 +578,35 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
     constructor(props:Data.CardInfoProps) {
         super(props);
         this.state = {open: false};
-
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentWillReceiveProps(property) {
+        this.setState({open: property});
+        if (property.open === true) {
+            toggleClass(document.getElementById("content"), "width50", false);
+        } else {
+            toggleClass(document.getElementById("content"), "width50", true);
+
+        }
 
     }
 
-    statics = {
-        cardClick():void {
-            console.log(this);
-        }
-    };
-
     handleClick():void {
         this.setState({open: !this.state.open});
+        if (this.state.open === true) {
+            toggleClass(document.getElementById("content"), "width50", false);
+        } else {
+            toggleClass(document.getElementById("content"), "width50", true);
+
+        }
     }
 
     render():JSX.Element {
         return (
             <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
                 {({x}) =>
-                <aside id="info">
+                <aside>
                     <div className="info__body fadeInLeftBig"
                          style={{
                         WebkitTransform: `translate3d(${x}%, 0, 0)`,
@@ -419,30 +638,36 @@ export class Card extends React.Component<Data.CardProps, Data.CardState> {
     constructor(props:Data.CardProps) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.state = {open: false};
     }
 
     handleClick(e:Data.ContentInterface):any {
-        CardInfo.cardClick();
-        // toggleClass(document.getElementById(""), "");
-        // CardInfo.CardClick.bind({cardClass: e, open: true});
+        this.setState({open: true, cardClass: e});
     }
 
     render():JSX.Element {
         return (
-            <div onClick={ this.handleClick.bind(null, this.props.Data) } className={ this.props.Size }>
-                <article className="card" style={{backgroundImage:this.props.Img}}>
-                    <h3>
-                        <span>{this.props.Title}</span>
-                        <p>Читать подробнее</p>
-                    </h3>
-                    <div className="cover"></div>
-                </article>
+            <div>
+                <div onClick={ this.handleClick.bind(null, this.props.Data) } className={ this.props.Size }>
+                    <article className="card" style={{backgroundImage:this.props.Img}}>
+                        <h3>
+                            <span>{this.props.Title}</span>
+                            <p>Читать подробнее</p>
+                        </h3>
+                        <div className="cover"></div>
+                    </article>
+                </div>
+
             </div>
+
         );
     }
 }
-
 ReactDOM
     .render(React
         .createElement(AutoContinent),
         document.getElementById("body"));
+
+ReactDOM
+    .render(<CardInfo open={false}/>,
+        document.getElementById("info"));

@@ -134,6 +134,16 @@ body {
   .column {
     padding: 1rem 1rem 1rem;
   }
+  &.width50 {
+    width:50%;
+    float: left;
+    .column{
+      width: 50%;
+      &.large-8{
+        width: 100%;
+      }
+    }
+  }
   .card {
     height: 240px;
     background-size: contain;
@@ -192,7 +202,9 @@ body {
     }
   }
 }
-#info{
+aside{
+  z-index: 9999;
+  background: #fff;
   .info__body {
     overflow: auto;
     position: fixed;
@@ -211,7 +223,7 @@ body {
       text-align: left;
       span{
         font-weight: 600;
-        font-size: 3rem;
+        font-size: 2.9rem;
         width: 60%;
         display: block;
         margin: 0 auto;

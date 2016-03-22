@@ -57,10 +57,14 @@ export interface ContentProps extends React.Props<any> {
 
 export interface ContentState extends React.Props<any> {
     DataInfo: ContentInterface[];
+    show: boolean;
+    DataInfoOne?: ContentInterface;
 }
 
 export interface CardInfoProps extends React.Props<any> {
+    open:boolean;
     cardClass?: ContentInterface;
+    show?: boolean;
 }
 
 export interface CardInfoState extends React.Props<any> {
@@ -78,4 +82,5 @@ export interface CardProps extends React.Props<any> {
 
 export interface CardState extends React.Props<any> {
     open: boolean;
+    cardClass?: ContentInterface;
 }
