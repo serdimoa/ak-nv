@@ -64,9 +64,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Шиномонтажная мастерская",
-                        Phone: "+7 (3466) 67-24-51",
+                        Phone: "8 (3466) 67-24-51",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "https://vk.com/vianor86"
+                        Url: "vk.com/vianor86"
                     }
                 },
                 {
@@ -76,9 +76,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Магазин автозапчастей для иномарок",
-                        Phone: "+7 (3466) 309–508",
+                        Phone: "8 (3466) 309–508",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://zr86.ru"
+                        Url: "zr86.ru"
                     }
                 },
                 {
@@ -90,7 +90,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                         Type: "Сеть сервисмаркетов",
                         Phone: "8–800–200–26–67",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://www.tikamis.ru"
+                        Url: "tikamis.ru"
                     }
                 },
                 {
@@ -100,9 +100,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "",
-                        Phone: "+7 (3466) 69–42–94",
+                        Phone: "8(3466) 69–42–94",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://akb-86.ru"
+                        Url: "akb-86.ru"
                     }
                 },
                 {
@@ -112,9 +112,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "торгово-сервисный центр",
-                        Phone: "+7 (3466) 407–405",
+                        Phone: "8 (3466) 407–405",
                         Time: "Ежедневно 09:00–19:00",
-                        Url: "http://avtosteklo-nv.ru"
+                        Url: "avtosteklo-nv.ru"
                     }
                 },
                 {
@@ -124,9 +124,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "интернет-магазин автозапчастей",
-                        Phone: "+7 (3466) 68–66–22",
+                        Phone: "8 (3466) 68–66–22",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://www.exist.ru"
+                        Url: "exist.ru"
                     }
                 },
                 {
@@ -136,20 +136,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Официальный дилер KARCHER",
-                        Phone: "+7 (3466) 51–21–51",
+                        Phone: "8 (3466) 51–21–51",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://intcentr86.ru/"
-                    }
-                },
-                {
-                    Size: 1,
-                    Title: "Континент",
-                    Img: "http://placehold.it/616x480",
-                    Info: {
-                        Img: "http://placehold.it/1280x500",
-                        Type: "Автотехцентр",
-                        Phone: "+7 (3466) 408–086",
-                        Time: "Ежедневно 09:00–21:00"
+                        Url: "intcentr86.ru/"
                     }
                 },
                 {
@@ -159,9 +148,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Магазин автозапчастей для китайских автомобилей",
-                        Phone: "+7 (3466) 40–66–44",
+                        Phone: "8 (3466) 40–66–44",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: "http://китай-город.рф"
+                        Url: "китай-город.рф"
                     }
                 },
                 {
@@ -171,7 +160,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Автомагазин",
-                        Phone: "+7 (3466) 48–06–86",
+                        Phone: "8 (3466) 48–06–86",
                         Time: "Ежедневно 09:00–20:00"
                     }
                 },
@@ -182,9 +171,8 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "магазин автоаксессуаров",
-                        Phone: "+7 (3466) 219–219",
+                        Phone: "8 (3466) 219–219",
                         Time: "Ежедневно 09:00–20:00",
-                        Url: ""
                     }
                 },
                 {
@@ -194,9 +182,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Шиномонтажная мастерская",
-                        Phone: "+7 (3466) 67-24-51",
+                        Phone: "8 (3466) 67-24-51",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "https://vk.com/vianor86"
+                        Url: "vk.com/vianor86"
                     }
                 },
                 {
@@ -208,7 +196,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                         Type: "Сеть сервисмаркетов",
                         Phone: "8–800–200–26–67",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "www.tikamis.ru"
+                        Url: "tikamis.ru"
                     }
                 },
                 {
@@ -218,9 +206,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Магазин автозапчастей для иномарок",
-                        Phone: "+7 (3466) 309–508",
+                        Phone: "8 (3466) 309–508",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "https://vk.com/zr86ru"
+                        Url: "vk.com/zr86ru"
                     }
                 },
                 {
@@ -230,7 +218,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "ИП Сорокина А.В.",
-                        Phone: "+7 (3466) 69–42–94",
+                        Phone: "8 (3466) 69–42–94",
                         Time: "Ежедневно 09:00-21:00",
                         Url: "akb-86.ru"
                     }
@@ -242,7 +230,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "торгово-сервисный центр",
-                        Phone: "+7 (3466) 407–405",
+                        Phone: "8 (3466) 407–405",
                         Time: "Ежедневно 09:00-21:00",
                         Url: "avtosteklo-nv.ru"
                     }
@@ -254,9 +242,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "интернет-магазин автозапчастей",
-                        Phone: "+7 (3466) 68–66–22",
+                        Phone: "8 (3466) 68–66–22",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "www.exist.ru"
+                        Url: "exist.ru"
                     }
                 },
                 {
@@ -266,9 +254,9 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "магазин автоаксессуаров",
-                        Phone: "+7 (3466) 219–219",
+                        Phone: "8 (3466) 219–219",
                         Time: "Ежедневно 09:00-21:00",
-                        Url: "https://vk.com/amixnv"
+                        Url: "vk.com/amixnv"
                     }
                 },
                 {
@@ -278,7 +266,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Официальный дилер",
-                        Phone: "+7 (3466) 51–21–51",
+                        Phone: "8 (3466) 51–21–51",
                         Time: "Ежедневно 09:00-21:00",
                         Url: "intcentr86.ru"
                     }
@@ -290,7 +278,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Автотехцентр",
-                        Phone: "+7 (3466) 408–086",
+                        Phone: "8 (3466) 408–086",
                         Time: "Ежедневно 09:00-21:00",
                     }
                 },
@@ -301,7 +289,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "многопрофильная компания",
-                        Phone: "+7 (3466) 53–23–97",
+                        Phone: "8 (3466) 53–23–97",
                         Time: "Ежедневно 09:00-21:00",
                         Url: "remont.vividnv.ru"
                     }
@@ -313,7 +301,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "Магазин автозапчастей для китайских автомобилей",
-                        Phone: "+7 (3466) 40–66–44",
+                        Phone: "8 (3466) 40–66–44",
                         Time: "Ежедневно 09:00-21:00",
                         Url: "китай-город.рф"
                     }
@@ -325,7 +313,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "автомагазин",
-                        Phone: "+7 (3466) 48–06–86",
+                        Phone: "8 (3466) 48–06–86",
                         Time: "Ежедневно 09:00-21:00",
                     }
                 },
@@ -336,7 +324,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "установочный центр",
-                        Phone: "+7 (3466) 52–22–22",
+                        Phone: "8 (3466) 52–22–22",
                         Time: "Ежедневно 09:00-19:00",
                     }
                 },
@@ -347,7 +335,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "шинный центр",
-                        Phone: "+7 (3466) 61–41–59",
+                        Phone: "8 (3466) 61–41–59",
                         Time: "Ежедневно 09:00-21:00",
                     }
                 },
@@ -358,7 +346,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "торговая компания",
-                        Phone: "+7 (3466) 67–10–10",
+                        Phone: "8 (3466) 67–10–10",
                         Time: "Ежедневно 09:00-18:00",
                         Url: "ледел.рф"
                     }
@@ -369,7 +357,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Img: "http://placehold.it/616x480",
                     Info: {
                         Img: "http://placehold.it/1280x500",
-                        Phone: "+7 (3466) 40–80–20",
+                        Phone: "8 (3466) 40–80–20",
                         Time: "Ежедневно 09:00-20:00",
                     }
                 },
@@ -380,7 +368,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "автомагазин",
-                        Phone: "+7 (3466) 67–12–12",
+                        Phone: "8 (3466) 67–12–12",
                         Time: "Ежедневно 09:00-20:00",
                     }
                 },
@@ -391,7 +379,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "ИП Левашов К.А.",
-                        Phone: "+7 (3466) 22–36–36",
+                        Phone: "8 (3466) 22–36–36",
                         Time: "Ежедневно 09:00-20:00",
                     }
                 },
@@ -402,7 +390,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     Info: {
                         Img: "http://placehold.it/1280x500",
                         Type: "автомагазин",
-                        Phone: "+7 (3466) 219–219",
+                        Phone: "8 (3466) 219–219",
                         Time: "Ежедневно 09:00-20:00",
                     }
                 }
@@ -572,7 +560,6 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 
     }
 }
-// <span>{this.props.Info.Text}</span> Example
 
 export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoState> {
     constructor(props:Data.CardInfoProps) {
@@ -603,37 +590,108 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
     }
 
     render():JSX.Element {
-        return (
-            <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
-                {({x}) =>
-                <aside>
-                    <div className="info__body fadeInLeftBig"
-                         style={{
+        if (this.state.open) {
+            return (
+                <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
+                    {({x}) =>
+                    <aside>
+                        <div className="info__body fadeInLeftBig"
+                             style={{
                         WebkitTransform: `translate3d(${x}%, 0, 0)`,
                         transform: `translate3d(${x}%, 0, 0)`
                         }}>
-                        <div className="info-title">
-                            <span className="underline">{ this.state.open ? this.props.cardClass.Title : ""}</span>
+                            <div className="info-title">
+                                <span className="underline">{ this.props.cardClass.Title }</span>
+                            </div>
+                            <button className="close" onClick={this.handleClick.bind(this)}>
+                                <i className=" close-icon">
+                                </i>
+                            </button>
+                            <div className="info-img">
+                                <img src={this.props.cardClass.Info.Img } className=""
+                                     alt="logo image"/>
+                            </div>
+                            <div className="info-content">
+                                <div className="row contact">
+                                    { this.props.cardClass.Info.Phone !== "undefined" ? <Phone
+                                        Number={this.props.cardClass.Info.Phone}/> : "" }
+                                    { this.props.cardClass.Info.Url !== undefined ? <Url
+                                        Text={this.props.cardClass.Info.Url}/> : ""}
+                                </div>
+                                <div className="row">
+                                    { this.props.cardClass.Info.Time !== "undefined" ? <Time
+                                        Text={this.props.cardClass.Info.Time}/> : ""}
+                                </div>
+                            </div>
                         </div>
-                        <button className="close" onClick={this.state.open ? this.handleClick.bind(this) : ""}>
-                            <i className=" close-icon">
-                            </i>
-                        </button>
-                        <div className="info-img">
-                            <img src={this.state.open ?  this.props.cardClass.Info.Img : "" } className=""
-                                 alt="logo image"/>
-                        </div>
-                        <div className="info-content">
-                            {this.state.open ?  this.props.cardClass.Size : ""}
-                        </div>
-                    </div>
-                </aside>
-                    }
-            </Motion>
+                    </aside>
+                        }
+                </Motion>
+            );
+        } else {
+            return (
+                <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
+                    {({x}) =>
+                    <aside>
+
+                    </aside>
+                        }
+                </Motion>
+            );
+        }
+    }
+}
+
+class Phone extends React.Component<Data.PhoneProps, {}> {
+    constructor(props:Data.PhoneProps) {
+        super(props);
+    }
+
+    render():JSX.Element {
+        return (
+            <div className="small-6 medium-6 large-6 column">
+                <a href={"tel:" + this.props.Number.replace(/[^-0-9]/gim,"")} className="phone">
+                    <i className="icon-phone"/>
+                    <span>{this.props.Number}</span>
+                </a>
+            </div>
         );
     }
 }
 
+class Time extends React.Component<Data.TimeProps, {}> {
+    constructor(props:Data.TimeProps) {
+        super(props);
+    }
+
+    render():JSX.Element {
+        return (
+            <div className="small-12 medium-12 large-12 column">
+                <div className="time">
+                    <i className="icon-time"/>
+                    <span>{this.props.Text}</span>
+                </div>
+            </div>
+        );
+    }
+}
+
+class Url extends React.Component<Data.UrlProps, {}> {
+    constructor(props:Data.UrlProps) {
+        super(props);
+    }
+
+    render():JSX.Element {
+        return (
+            <div className="small-6 medium-6 large-6 column">
+                <a target="_blank" href={"http://" + this.props.Text} className="url">
+                    <i className="icon-url"/>
+                    <span>{this.props.Text}</span>
+                </a>
+            </div>
+        );
+    }
+}
 export class Card extends React.Component<Data.CardProps, Data.CardState> {
     constructor(props:Data.CardProps) {
         super(props);

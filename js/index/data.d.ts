@@ -19,6 +19,16 @@ interface InfoInterface {
     Url?: string;
 }
 
+export interface PhoneProps extends React.Props<any> {
+    Number : string;
+}
+export interface UrlProps extends React.Props<any> {
+    Text : string;
+}
+export interface TimeProps extends React.Props<any> {
+    Text : string;
+}
+
 export interface ContentInterface {
     Size?: number;
     Title?: string;

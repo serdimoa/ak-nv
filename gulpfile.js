@@ -70,7 +70,7 @@ gulp.task('imagesreload', function() {
 gulp.task('csscopyreload', function() {
   return gulp
       .src(['style/**/*.scss'])
-      .pipe(sas.sync().on('error', sass.logError))
+      .pipe(sass.sync().on('error', sass.logError))
       .pipe(gulp.dest('dist'))
       .pipe(reload({
         stream: true
@@ -100,30 +100,31 @@ function htmlChange() {
   reload();
 }
 
-gulp.task('browser-sync', ['html', 'bundle', 'images', 'csscopy'], function() {
-  browserSync.init({
-    server: {
-      baseDir: './dist'
-    }
-  });
+gulp.task('browser-sync', ['html', 'bundle', 'images', 'csscopy', 'glyph'],
+    function() {
+      browserSync.init({
+        server: {
+          baseDir: './dist'
+        }
+      });
 
-  gulp.watch('*.html').on('change', htmlChange);
+      gulp.watch('*.html').on('change', htmlChange);
 
-  gulp.watch('js/**/*{ts,tsx}').on('change', function() {
-    gulp.start('bundlereload');
-  });
+      gulp.watch('js/**/*{ts,tsx}').on('change', function() {
+        gulp.start('bundlereload');
+      });
 
-  gulp.watch('style/**/*.scss').on('change', function() {
-    gulp.start('csscopyreload');
-  });
+      gulp.watch('style/**/*.scss').on('change', function() {
+        gulp.start('csscopyreload');
+      });
 
-  gulp.watch('images/*.*').on('change', function() {
-    gulp.start('imagesreload');
-  });
-  gulp.watch('fontello.config.json').on('change', function() {
-    gulp.start('glyphReload');
-  });
-});
+      gulp.watch('images/*.*').on('change', function() {
+        gulp.start('imagesreload');
+      });
+      gulp.watch('fontello.config.json').on('change', function() {
+        gulp.start('glyphReload');
+      });
+    });
 
 gulp.task('clean', function(done) {
   del(['.tmp'], done.bind(this));

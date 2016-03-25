@@ -113,6 +113,7 @@ section > h1:first-child { // Main page heading with yellow underline
     position: relative;
 
     &:after {
+
       @include pseudo;
       top: 100%; left: 50%;
       width: 24rem;
@@ -165,7 +166,7 @@ section > h1:first-child { // Main page heading with yellow underline
     width: 100px;
     height: 8px;
     margin-bottom: 0;
-    background: $c-red;
+    background: $c-white;
   }
 }
 
