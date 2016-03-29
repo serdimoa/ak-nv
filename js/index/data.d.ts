@@ -75,6 +75,7 @@ export interface CardInfoProps extends React.Props<any> {
     open:boolean;
     cardClass?: ContentInterface;
     show?: boolean;
+    ScrollToTop?: boolean;
 }
 
 export interface CardInfoState extends React.Props<any> {

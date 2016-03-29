@@ -11,12 +11,15 @@ import * as WebFont from "webfontloader";
 import * as DataToContent from "./datatocontent";
 import * as Data from "data";
 import {contenttopage} from "./datatocontent";
+import * as jQuery from "jquery";
 import Element = JSX.Element;
 import Mixin = __React.Mixin;
 
+var ScrollArea = require("react-scrollbar");
+
 WebFont.load({
-    google: {
-        families: ["Roboto Condensed", "PT Sans Narrow"]
+    typekit: {
+        id: ["hnu0zvv"]
     }
 });
 
@@ -24,16 +27,20 @@ namespace constants {
     export var LOGO:string = "image/logomenu.svg";
 }
 
-var stateOverflow = function ():void {
-    var overflowBody:string = document.getElementById("body").style.overflow;
-    if (overflowBody === "auto" || overflowBody === "") {
-        document.getElementById("body").style.overflow = "hidden";
-    } else {
-        document.getElementById("body").style.overflow = "auto";
-    }
-};
+let FixHeight = function () {
+    jQuery("#info").find("> div").height("100%");
+} ;
 
-var toggleClass = function (el, className:string, del:boolean):void {
+function stateOverflow():void {
+    var overflowBody:string = document.getElementById("app").style.overflow;
+    if (overflowBody === "auto" || overflowBody === "") {
+        document.getElementById("app").style.overflow = "hidden";
+    } else {
+        document.getElementById("app").style.overflow = "auto";
+    }
+}
+
+let toggleClass = function (el, className:string, del:boolean):void {
     if (del === true) {
         if (el.classList) {
             el.classList.remove(className);
@@ -283,7 +290,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     }
                 },
                 {
-                    Size: 1,
+                    Size: 2,
                     Title: "Вилон",
                     Img: "http://placehold.it/616x480",
                     Info: {
@@ -318,7 +325,7 @@ export class AutoContinent extends React.Component<{}, Data.State> {
                     }
                 },
                 {
-                    Size: 1,
+                    Size: 2,
                     Title: "Горбунов Аудио",
                     Img: "http://placehold.it/616x480",
                     Info: {
@@ -518,16 +525,18 @@ export class Content extends React.Component<Data.ContentProps, Data.ContentStat
 
     static handleClick() {
         ReactDOM
-            .render(<CardInfo open={true} cardClass={this}/>,
+            .render(<CardInfo open={true} ScrollToTop={true} cardClass={this}/>,
                 document.getElementById("info"));
+        CardInfo.scrollTops();
+        FixHeight();
     };
 
     render():JSX.Element {
-        var card_generator = this.state.DataInfo.map(function (data, i) {
+        let card_generator = this.state.DataInfo.map(function (data, i) {
 
-            var size:string = "";
-            var img:string = "url(" + data.Img + ")";
-            var title:string = data.Title;
+            let size:string = "";
+            let img:string = "url(" + data.Img + ")";
+            let title:string = data.Title;
             switch (data.Size) {
                 case 1:
                     size = "column small-12 medium-4 large-4 ";
@@ -566,27 +575,46 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
         super(props);
         this.state = {open: false};
         this.handleClick = this.handleClick.bind(this);
+        this.handleTop = this.handleTop.bind(this);
+        CardInfo.scrollTops = CardInfo.scrollTops.bind(this);
+    }
+
+    context: {
+        scrollArea : any
+    };
+
+    static scrollTops() {
+        //console.log(this);
+        this.handleClick();
+    }
+
+    handleTop():void {
+        this.context.scrollArea.scrollTop();
     }
 
     componentWillReceiveProps(property) {
         this.setState({open: property});
+        FixHeight();
         if (property.open === true) {
             toggleClass(document.getElementById("content"), "width50", false);
         } else {
             toggleClass(document.getElementById("content"), "width50", true);
-
+            this.context.scrollArea.scrollTop();
         }
 
     }
 
     handleClick():void {
+
         this.setState({open: !this.state.open});
         if (this.state.open === true) {
             toggleClass(document.getElementById("content"), "width50", false);
         } else {
             toggleClass(document.getElementById("content"), "width50", true);
-
         }
+    }
+
+    handleScrolls(ScrollData):void {
     }
 
     render():JSX.Element {
@@ -594,7 +622,14 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
             return (
                 <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
                     {({x}) =>
-                    <aside>
+                    <ScrollArea
+                        speed={0.8}
+                        className="aside"
+                        contentClassName="aside"
+                        horizontal={false}
+                        smoothScrolling={true}
+                        onScroll={this.handleScrolls}>
+
                         <div className="info__body fadeInLeftBig"
                              style={{
                         WebkitTransform: `translate3d(${x}%, 0, 0)`,
@@ -619,12 +654,29 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
                                         Text={this.props.cardClass.Info.Url}/> : ""}
                                 </div>
                                 <div className="row">
-                                    { this.props.cardClass.Info.Time !== "undefined" ? <Time
-                                        Text={this.props.cardClass.Info.Time}/> : ""}
+                                    <p className="about">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt mollit anim id est laborum
+                                    </p>
+                                    { this.props.cardClass.Info.Time !== "undefined" ?
+                                    <Time Text={this.props.cardClass.Info.Time}/> : "" }
+                                    <p className="about">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt mollit anim id est laborum
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </aside>
+
+                    </ScrollArea>
                         }
                 </Motion>
             );
@@ -632,9 +684,15 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
             return (
                 <Motion style={{x: spring(this.state.open ? 0 : 120)}}>
                     {({x}) =>
-                    <aside>
+                    <ScrollArea
+                        speed={0.8}
+                        className="aside"
+                        contentClassName="aside"
+                        horizontal={false}
+                        smoothScrolling={true}
+                        onScroll={this.handleScrolls}>
+                    </ScrollArea>
 
-                    </aside>
                         }
                 </Motion>
             );
@@ -701,6 +759,7 @@ export class Card extends React.Component<Data.CardProps, Data.CardState> {
 
     handleClick(e:Data.ContentInterface):any {
         this.setState({open: true, cardClass: e});
+        FixHeight();
     }
 
     render():JSX.Element {

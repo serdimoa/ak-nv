@@ -42,9 +42,10 @@
     "jscs": "^2.10.1",
     "motion-ui": "^1.2.2",
     "plumber": "^0.4.8",
+    "react-lorem-component": "^0.10.0",
     "tiny-lr": "^0.2.1",
     "tslint": "^3.5.0",
-    "typescript": "^1.8.2",
+    "typescript": "^1.8.9",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
@@ -55,6 +56,8 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-motion": "^0.4.2",
+    "react-scrollbar": "^0.4.1",
+    "react-textfit": "^0.1.8",
     "webfontloader": "^1.6.22"
   }
 }
