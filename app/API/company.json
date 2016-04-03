@@ -1,0 +1,339 @@
+[
+  {
+    "size": 2,
+    "title": "Vianor",
+    "img": "http://placehold.it/1275x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Шиномонтажная мастерская",
+      "phone": "8 (3466) 67-24-51",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "vk.com/vianor86"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Запчастер",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Магазин автозапчастей для иномарок",
+      "phone": "8 (3466) 309–508",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "zr86.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Тикамис",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Сеть сервисмаркетов",
+      "phone": "8–800–200–26–67",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "tikamis.ru"
+    }
+  },
+  {
+    "size": 2,
+    "title": "Специализированный магазин аккумуляторов",
+    "img": "http://placehold.it/1275x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "",
+      "phone": "8(3466) 69–42–94",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "akb-86.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Автостекольная станция №1",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "торгово-сервисный центр",
+      "phone": "8 (3466) 407–405",
+      "time": "Ежедневно 09:00–19:00",
+      "url": "avtosteklo-nv.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Exist.ru",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "интернет-магазин автозапчастей",
+      "phone": "8 (3466) 68–66–22",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "exist.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "KARCHER",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Официальный дилер KARCHER",
+      "phone": "8 (3466) 51–21–51",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "intcentr86.ru/"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Китай-город",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Магазин автозапчастей для китайских автомобилей",
+      "phone": "8 (3466) 40–66–44",
+      "time": "Ежедневно 09:00–20:00",
+      "url": "китай-город.рф"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Корея Авто",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Автомагазин",
+      "phone": "8 (3466) 48–06–86",
+      "time": "Ежедневно 09:00–20:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Автомикс",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "магазин автоаксессуаров",
+      "phone": "8 (3466) 219–219",
+      "time": "Ежедневно 09:00–20:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Vianor",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Шиномонтажная мастерская",
+      "phone": "8 (3466) 67-24-51",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "vk.com/vianor86"
+    }
+  },
+  {
+    "size": 1,
+    "title": "ТИКАМИС",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Сеть сервисмаркетов",
+      "phone": "8–800–200–26–67",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "tikamis.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Запчастер",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Магазин автозапчастей для иномарок",
+      "phone": "8 (3466) 309–508",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "vk.com/zr86ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Специализированный магазин аккумуляторов",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "ИП Сорокина А.В.",
+      "phone": "8 (3466) 69–42–94",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "akb-86.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Автостекольная станция №1",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "торгово-сервисный центр",
+      "phone": "8 (3466) 407–405",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "avtosteklo-nv.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Exist.ru",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "интернет-магазин автозапчастей",
+      "phone": "8 (3466) 68–66–22",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "exist.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Автомикс",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "магазин автоаксессуаров",
+      "phone": "8 (3466) 219–219",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "vk.com/amixnv"
+    }
+  },
+  {
+    "size": 1,
+    "title": "KARCHER",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Официальный дилер",
+      "phone": "8 (3466) 51–21–51",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "intcentr86.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Континент",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Автотехцентр",
+      "phone": "8 (3466) 408–086",
+      "time": "Ежедневно 09:00-21:00"
+    }
+  },
+  {
+    "size": 2,
+    "title": "Вилон",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "многопрофильная компания",
+      "phone": "8 (3466) 53–23–97",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "remont.vividnv.ru"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Китай-город",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "Магазин автозапчастей для китайских автомобилей",
+      "phone": "8 (3466) 40–66–44",
+      "time": "Ежедневно 09:00-21:00",
+      "url": "китай-город.рф"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Корея-Авто",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "автомагазин",
+      "phone": "8 (3466) 48–06–86",
+      "time": "Ежедневно 09:00-21:00"
+    }
+  },
+  {
+    "size": 2,
+    "title": "Горбунов Аудио",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "установочный центр",
+      "phone": "8 (3466) 52–22–22",
+      "time": "Ежедневно 09:00-19:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Vianor",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "шинный центр",
+      "phone": "8 (3466) 61–41–59",
+      "time": "Ежедневно 09:00-21:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Ледел Сургут",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "торговая компания",
+      "phone": "8 (3466) 67–10–10",
+      "time": "Ежедневно 09:00-18:00",
+      "url": "ледел.рф"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Центр оригинальных запчастей для европейских и американских автомобилей",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "phone": "8 (3466) 40–80–20",
+      "time": "Ежедневно 09:00-20:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Авторемни",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "автомагазин",
+      "phone": "8 (3466) 67–12–12",
+      "time": "Ежедневно 09:00-20:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "Магазин оригинальных автозапчастей для японских автомобилей",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "ИП Левашов К.А.",
+      "phone": "8 (3466) 22–36–36",
+      "time": "Ежедневно 09:00-20:00"
+    }
+  },
+  {
+    "size": 1,
+    "title": "АВТОСВЕЧА",
+    "img": "http://placehold.it/616x480",
+    "info": {
+      "img": "http://placehold.it/1280x500",
+      "type": "автомагазин",
+      "phone": "8 (3466) 219–219",
+      "time": "Ежедневно 09:00-20:00"
+    }
+  }
+]

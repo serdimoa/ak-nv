@@ -56,6 +56,7 @@ body {
   }
   .menu {
     margin-top: 50px;
+
     li {
       margin-top: 25px;
       a {
@@ -139,8 +140,8 @@ body {
     float: left;
     .column {
       width: 50%;
-      .card{
-        h3{
+      .card {
+        h3 {
           font-size: 1.7rem;
         }
       }
@@ -210,13 +211,14 @@ body {
   }
 }
 
-#info{
+#info {
   position: fixed;
-  width:50%;
-  right:0;
-  top:0;
-  height:100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  height: 100%;
 }
+
 .aside {
   z-index: 9999;
   background: $c-white;

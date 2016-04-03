@@ -1,32 +1,32 @@
 {
+  "browser": true,
 
-"browser": true,
+  "jquery": true,
 
-"jquery": true,
+  "node": true,
 
-"node": true,
+  "esnext": true,
 
-"esnext": true,
+  "camelcase": true,
 
-"camelcase": true,
+  "eqeqeq": true,
 
-"eqeqeq": true,
+  "indent": 2,
 
-"indent": 2,
+  "latedef": true,
 
-"latedef": true,
+  "maxlen": 100,
 
-"maxlen": 100,
+  "newcap": true,
 
-"newcap": true,
+  "quotmark": "single",
 
-"quotmark": "single",
+  "strict": true,
 
-"strict": true,
+  "undef": true,
 
-"undef": true,
+  "unused": true,
 
-"unused": true,
 
-"eqnull": true
+  "eqnull": true
 }

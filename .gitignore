@@ -1,10 +1,4 @@
-node_modules
-typings
-.tmp
-bower_components
-dist
-js/**/*.js
-js/**/*.js.map
-style/**.css.map
-style/**.css
-.idea
+.DS_Store
+dist/**
+node_modules/
+bower_components/
