@@ -3,7 +3,16 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var AUTOPREFIXER_BROWSERS = [
+  'Android 2.3',
+  'Android >= 4',
+  'Chrome >= 35',
+  'Firefox >= 31',
+  'Explorer >= 9',
+  'iOS >= 7',
+  'Opera >= 12',
+  'Safari >= 7.1',
+];
 module.exports = {
   devtool: 'eval-source-map',
   entry: [
@@ -40,9 +49,23 @@ module.exports = {
       test: /\.json?$/,
       loader: 'json',
     }, {
-      test: /\.scss/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+      loader: 'url-loader',
+      query: {
+        name: '[path][name].[ext]?[hash]',
+        limit: 10000,
+      },
+    }, {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass'],
     },
     ],
+    postcss(bundler) {
+      return [
+        require('postcss-import')({ addDependencyTo: bundler }),
+        require('precss')(),
+        require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
+      ];
+    },
   },
 };

@@ -1,4 +1,4 @@
-/**
+/** *******************************
  * Created by serdimoa on 03.04.16.
  */
 export const SHOW_MENU = 'SHOW_MENU';

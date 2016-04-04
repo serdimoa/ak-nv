@@ -4,7 +4,7 @@
 import * as types from '../constants/ActionTypes';
 
 const initialState = {
-  show: false,
+  open: false,
   urlNum: [1, 2, 3],
   urlById: {
     1: {
@@ -22,7 +22,7 @@ const initialState = {
   },
 };
 
-export default function (state = initialState, action) {
+export default function menu(state = initialState, action) {
   switch (action.type) {
     case types.SHOW_MENU:
       return {

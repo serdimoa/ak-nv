@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+/* eslint no-console: 0  */
 
 /**
  * Created by serdimoa on 02.04.16.
