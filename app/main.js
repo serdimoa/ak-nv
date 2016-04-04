@@ -5,10 +5,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import App from '../App/containers/App';
+import App from './containers/App';
 import configureStore from './store/configureStore';
 import Style from '../style/main.scss';
 const store = configureStore();
+import * as WebFont from 'webfontloader';
+
+WebFont.load({
+  typekit: {
+    id: ['hnu0zvv'],
+  },
+});
 
 ReactDOM.render(
     <Provider store={store}>

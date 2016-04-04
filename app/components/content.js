@@ -3,6 +3,7 @@
  */
 
 import React, { PropTypes, Component } from 'react';
+import ScrollArea from 'react-scrollbar';
 
 export default class Content extends Component {
   render() {

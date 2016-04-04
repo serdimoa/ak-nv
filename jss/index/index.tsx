@@ -29,7 +29,7 @@ namespace constants {
 
 let FixHeight = function () {
     jQuery("#info").find("> div").height("100%");
-} ;
+};
 
 function stateOverflow():void {
     var overflowBody:string = document.getElementById("app").style.overflow;
@@ -579,7 +579,7 @@ export class CardInfo extends React.Component<Data.CardInfoProps, Data.CardInfoS
         CardInfo.scrollTops = CardInfo.scrollTops.bind(this);
     }
 
-    context: {
+    context:{
         scrollArea : any
     };
 

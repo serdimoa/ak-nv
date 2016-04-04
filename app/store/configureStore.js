@@ -4,7 +4,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
-import DevTools from '../containers/DevTools';
+import DevTools from '../containers/devTools';
 import rootReducer from '../reducers/index';
 
 const enhancer = compose(

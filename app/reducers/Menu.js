@@ -5,8 +5,7 @@ import * as types from '../constants/ActionTypes';
 
 const initialState = {
   open: false,
-  urlNum: [1, 2, 3],
-  urlById: {
+  items: {
     1: {
       url: 'home',
       text: 'Главная',
@@ -26,23 +25,13 @@ export default function menu(state = initialState, action) {
   switch (action.type) {
     case types.SHOW_MENU:
       return {
-        show: true,
-        urlNum: {
-          ...state.urlNum,
-        },
-        urlById: {
-          ...state.urlById,
-        },
+        ...state,
+        open: action.payload,
       };
     case types.HIDE_MENU:
       return {
-        show: false,
-        urlNum: {
-          ...state.urlNum,
-        },
-        urlById: {
-          ...state.urlById,
-        },
+        ...state,
+        open: action.payload,
       };
     default:
       return state;

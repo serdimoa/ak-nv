@@ -4,16 +4,21 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Content from '../components/content';
 import Navigation from '../components/navigation';
-import DevTools from './DevTools';
+import Header from '../components/Header';
+import DevTools from './devTools';
+import * as Actions from '../actions/index';
 
 class App extends Component {
   render() {
     const properties = this.props;
+    const { showMenu } = this.props.Actions;
     return (
         <div>
-          <Navigation opens={properties.menu.open}/>
+          <Header />
+          <Navigation showMenu={showMenu} menuText={properties.menu.items} opens={properties.menu.open}/>
           <Content content='hello'/>
           <DevTools />
         </div>
@@ -29,5 +34,11 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    Actions: bindActionCreators(Actions, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
