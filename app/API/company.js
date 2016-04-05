@@ -2,7 +2,7 @@
  * Created by serdimoa on 03.04.16.
  */
 
-import _company from 'company.json';
+import _company from './company.json';
 
 const TIMEOUT = 100;
 

@@ -6,7 +6,7 @@ import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import DevTools from '../containers/devTools';
 import rootReducer from '../reducers/index';
-
+import {receiveAllCompany} from '../actions';
 const enhancer = compose(
   applyMiddleware(thunk),
   DevTools.instrument(),
@@ -26,6 +26,8 @@ export default function configureStore(initialState) {
       store.replaceReducer(nextRootReducer);
     });
   }
+
+  store.dispatch(receiveAllCompany());
 
   return store;
 }

@@ -493,7 +493,7 @@ export class Navigation extends React.Component<Data.NavigationProps, Data.Navig
     }
 }
 
-export class Header extends React.Component<Data.HeaderProps, Data.HeaderState> {
+export class HeacompanyTextder extends React.Component<Data.HeaderProps, Data.HeaderState> {
     constructor() {
         super();
     }

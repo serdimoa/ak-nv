@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Content from '../components/content';
+import Content from '../containers/Content';
 import Navigation from '../components/navigation';
 import Header from '../components/Header';
 import DevTools from './devTools';
@@ -19,7 +19,7 @@ class App extends Component {
         <div>
           <Header />
           <Navigation showMenu={showMenu} menuText={properties.menu.items} opens={properties.menu.open}/>
-          <Content content='hello'/>
+          <Content />
           <DevTools />
         </div>
 

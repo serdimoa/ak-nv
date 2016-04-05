@@ -23,12 +23,7 @@ const initialState = {
 
 export default function menu(state = initialState, action) {
   switch (action.type) {
-    case types.SHOW_MENU:
-      return {
-        ...state,
-        open: action.payload,
-      };
-    case types.HIDE_MENU:
+    case types.TRIGGER_MENU:
       return {
         ...state,
         open: action.payload,
