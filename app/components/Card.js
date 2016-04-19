@@ -8,12 +8,12 @@ export default class Card extends Component {
     super(props);
 
     // Manually bind this method to the component instance...
-    //this.onNavigationClick = this.onNavigationClick.bind(this);
+
   }
 
   render() {
     return (
-        <div className={ this.props.size }>
+        <div onClick="" className={ this.props.size }>
           <article className="card" style={{ backgroundImage:this.props.img }}>
             <h3>
               <span>{this.props.title}</span>

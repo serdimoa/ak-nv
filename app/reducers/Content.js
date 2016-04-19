@@ -3,7 +3,11 @@
  */
 import * as states from '../constants/ActionTypes';
 
-export default function content(state={}, action) {
+const initialState = {
+  cardOpen: false,
+};
+
+export default function content(state=initialState, action) {
   switch (action.type) {
     case states.RECEIVE_COMPANY:
       return { ...state, company: action.payload };

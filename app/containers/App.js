@@ -19,18 +19,20 @@ class App extends Component {
         <div>
           <Header />
           <Navigation showMenu={showMenu} menuText={properties.menu.items} opens={properties.menu.open}/>
-          <Content />
-          <DevTools />
+          <Content cardOpen={properties.content.cardOpen } />
+          <DevTools  />
         </div>
 
     );
   }
 }
+//
 
 function mapStateToProps(state) {
   return {
     menu: state.menu,
     content: state.content,
+    cardOpen:state.cardOpen,
   };
 }
 
